@@ -55,11 +55,46 @@ if uploaded_file is not None:
     st.image(image, caption='Imagen subida', use_column_width=True)
     st.write("Imagen subida exitosamente. Procesando...")
 
-# Seleccionar la ubicación de la imagen
-st.markdown("<h2 style='text-align: center;'>Ubicación de la imagen</h2>", unsafe_allow_html=True)
-st.write("Por favor, ingrese las coordenadas de la ubicación donde se tomó la imagen:")
-latitud = st.number_input("Latitud", value=0.0, step=0.0001)
-longitud = st.number_input("Longitud", value=0.0, step=0.0001)
+import csv
+import os
+from PIL import Image
+import streamlit as st
+
+st.markdown("<h2 style='text-align: center;'>Subir una foto para análisis</h2>", unsafe_allow_html=True)
+uploaded_file = st.file_uploader("Elige una imagen...", type=['jpg', 'jpeg', 'png'])
+
+if uploaded_file is not None:
+    # Mostrar la imagen subida
+    image = Image.open(uploaded_file)
+    st.image(image, caption='Imagen subida', use_column_width=True)
+    st.write("Imagen subida exitosamente. Procesando...")
+
+    # Seleccionar la ubicación de la imagen
+    st.markdown("<h2 style='text-align: center;'>Ubicación de la imagen</h2>", unsafe_allow_html=True)
+    st.write("Por favor, ingrese las coordenadas de la ubicación donde se tomó la imagen:")
+    latitud = st.number_input("Latitud", value=0.0, step=0.0001)
+    longitud = st.number_input("Longitud", value=0.0, step=0.0001)
+
+    # Botón para confirmar la carga de la ubicación
+    if st.button('Cargar Ubicación'):
+        # Nombre del archivo CSV donde se guardarán las ubicaciones
+        nombre_archivo_csv = 'ubicaciones.csv'
+
+        # Verificar si el archivo ya existe para determinar si se debe añadir la fila de encabezado
+        archivo_existe = os.path.isfile(nombre_archivo_csv)
+
+        # Abrir el archivo en modo de añadir ('a') para no sobrescribir el contenido existente
+        with open(nombre_archivo_csv, mode='a', newline='') as archivo:
+            escritor_csv = csv.writer(archivo)
+            
+            # Si el archivo no existía, añadir la fila de encabezado
+            if not archivo_existe:
+                escritor_csv.writerow(['Latitud', 'Longitud'])
+            
+            # Añadir las coordenadas actuales
+            escritor_csv.writerow([latitud, longitud])
+
+        st.write("Ubicación registrada exitosamente.")
 st.image(image, caption='Imagen subida', use_column_width=True)
 st.write("Imagen subida exitosamente. Procesando...")
 
@@ -69,44 +104,4 @@ st.write("Por favor, ingrese las coordenadas de la ubicación donde se tomó la 
 latitud = st.number_input("Latitud", value=0.0, step=0.0001)
 longitud = st.number_input("Longitud", value=0.0, step=0.0001)
 
-# Botón para iniciar el análisis
-if st.button("Iniciar análisis"):
-    # Mostrar el mensaje de procesamiento
-    st.write("Procesando...")
 
-    # Cargar el modelo de IA
-    # model = load_model("model.h5")
-
-    # Realizar la predicción
-    # prediction = model.predict(image)
-
-    # Mostrar los resultados
-    st.write("Análisis completado.")
-    st.write("Cantidad de microplásticos encontrados: 5")
-    st.write("Tipo de microplástico: Polietileno")
-    st.write("Ubicación de los microplásticos:")
-    st.write("1. Latitud: 0.000, Longitud: 0.000")
-    st.write("2. Latitud: 0.001, Longitud: 0.001")
-    st.write("3. Latitud: 0.002, Longitud: 0.002")
-    st.write("4. Latitud: 0.003, Longitud: 0.003")
-    st.write("5. Latitud: 0.004, Longitud: 0.004")
-
-    # Guardar los resultados en un archivo CSV
-    if not os.path.exists("resultados.csv"):
-        with open("resultados.csv", mode='w', newline='') as file:
-            writer = csv.writer(file)
-            writer.writerow(["Cantidad de microplásticos", "Tipo de microplástico", "Latitud", "Longitud"])
-            writer.writerow([5, "Polietileno", 0.000, 0.000])
-            writer.writerow([5, "Polietileno", 0.001, 0.001])
-            writer.writerow([5, "Polietileno", 0.002, 0.002])
-            writer.writerow([5, "Polietileno", 0.003, 0.003])
-            writer.writerow([5, "Polietileno", 0.004, 0.004])
-    else:
-        with open("resultados.csv", mode='a', newline='') as file:
-            writer = csv.writer(file)
-            writer.writerow([5, "Polietileno", 0.000, 0.000])
-            writer.writerow([5, "Polietileno", 0.001, 0.001])
-            writer.writerow([5, "Polietileno", 0.002, 0.002])
-            writer.writerow([5, "Polietileno", 0.003, 0.003])
-            writer.writerow([5, "Polietileno", 0.004, 0.004])
-    st.write("Los resultados se han guardado exitosamente en el archivo 'resultados.csv'.")
