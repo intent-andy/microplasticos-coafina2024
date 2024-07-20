@@ -43,7 +43,7 @@ with st.expander("Fuentes de microplásticos"):
 
     st.markdown("</div>", unsafe_allow_html=True)
 
-# Añadir la opción de subir una foto
+# Subir una imagen para análisis
 st.markdown("<h2 style='text-align: center;'>Subir una foto para análisis</h2>", unsafe_allow_html=True)
 uploaded_file = st.file_uploader("Elige una imagen...", type=['jpg', 'jpeg', 'png'])
 
@@ -52,3 +52,8 @@ if uploaded_file is not None:
     image = Image.open(uploaded_file)
     st.image(image, caption='Imagen subida', use_column_width=True)
     st.write("Imagen subida exitosamente. Procesando...")
+
+# Seleccionar la ubicación de la imagen
+st.markdown("<h2 style='text-align: center;'>Ubicación de la imagen</h2>", unsafe_allow_html=True)
+latitud = st.number_input("Latitud", value=0.0, step=0.0001)
+longitud = st.number_input("Longitud", value=0.0, step=0.0001)
