@@ -46,4 +46,9 @@ with st.expander("Fuentes de microplásticos"):
 
     st.markdown("</div>", unsafe_allow_html=True)
 
-# Sistema de identificación de microplásticos
+##Software de conteo
+    st.markdown("Bienvenido al Software de conteo y reconocimiento de microplásticos")
+    st.write("Recuerda:")
+    st.write("1-.Tener a la mano tu ubicación")
+    st.write("2-.La fotos deben ser de microplásticos filtrados es decir sin ningún otro material en lo posible")
+    st.write("3-.Las fotos deben ser claras para obtener mejores resultados")
