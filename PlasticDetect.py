@@ -60,7 +60,5 @@ st.markdown("<h2 style='text-align: center;'>Ubicación de la imagen</h2>", unsa
 st.write("Por favor, ingrese las coordenadas de la ubicación donde se tomó la imagen:")
 latitud = st.number_input("Latitud", value=0.0, step=0.0001)
 longitud = st.number_input("Longitud", value=0.0, step=0.0001)
-st.image(image, caption='Imagen subida', use_column_width=True)
-st.write("Imagen subida exitosamente. Procesando...")
 
 
