@@ -53,8 +53,26 @@ if uploaded_file is not None:
     st.image(image, caption='Imagen subida', use_column_width=True)
     st.write("Imagen subida exitosamente. Procesando...")
 
+import folium
+from streamlit_folium import folium_static
+from folium.plugins import MarkerCluster
+
 # Seleccionar la ubicación de la imagen
 st.markdown("<h2 style='text-align: center;'>Ubicación de la imagen</h2>", unsafe_allow_html=True)
 st.write("Por favor, seleccione en el mapa la ubicación donde se tomó la imagen.")
 
-st.map()
+# Mapa interactivo
+m = folium.Map(location=[40.416775, -3.703790], zoom_start=4)  # Puedes cambiar la ubicación inicial
+
+# Opcional: Añadir MarkerCluster para agrupar marcadores si esperas muchos clics
+marker_cluster = MarkerCluster().add_to(m)
+
+# Añadir un marcador con un popup que se muestra al hacer clic (ejemplo)
+folium.Marker(
+    [40.416775, -3.703790], 
+    popup='Ubicación seleccionada',
+    tooltip='Haz clic para seleccionar esta ubicación'
+).add_to(marker_cluster)
+
+# Mostrar el mapa en Streamlit
+folium_static(m)
