@@ -18,7 +18,7 @@ color_ries_con = "#90EE90"  # Verde claro
 # Usar las columnas con HTML y CSS para el color de fondo
 with reto:
     st.markdown(f"<div style='background-color:{color_reto};padding:10px;border-radius:10px;'>", unsafe_allow_html=True)
-    st.markdown("<h1 style='text-align: center;'>¿Qué es PlasticDetect?</h1>", unsafe_allow_html=True)
+    st.markdown("<h2 style='text-align: center;'>¿Qué es PlasticDetect?</h2>", unsafe_allow_html=True)
     st.write("PlasticDetect es una aplicación que facilita la identificación y clasificación de microplásticos presentes en imágenes capturadas por los propios usuarios. Para esto utiliza una IA que se encarga de analizar las imágenes y señalar la cantidad de microplásticos presentes y su tipo. Esta aplicación es el resultado del Reto 5 del Hackaton Coafina 2024: 'Microplásticos: un desafío ciudadano'.")
     st.markdown("</div>", unsafe_allow_html=True)
 
