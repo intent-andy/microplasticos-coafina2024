@@ -94,12 +94,3 @@ latitud = st.number_input('Latitud', value=0.0, format="%.6f")
 longitud = st.number_input('Longitud', value=0.0, format="%.6f")
 descripcion = st.text_input('Descripción de la ubicación (opcional)')
 pais = st.text_input('País')
-if not descripcion:
-    descripcion = f'Ubicación: {latitud}, {longitud}, País: {pais}'
-    mapa = folium.Map(location=[float(latitud), float(longitud)], zoom_start=15)
-    folium.Marker(
-        location=[float(latitud), float(longitud)],
-        popup=descripcion,
-        icon=folium.Icon(color='blue', icon='info-sign')
-    ).add_to(mapa)
-st_data = st_folium(mapa)
