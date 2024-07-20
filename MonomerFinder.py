@@ -3,7 +3,6 @@ from PIL import Image
 import csv
 import matplotlib.pyplot as plt
 import numpy as np
-
 # Definir el estilo CSS para el color de fondo
 color_reto = "#FFD700"  # Amarillo
 color_defi = "#ADD8E6"  # Azul claro
@@ -69,7 +68,6 @@ if uploaded_file is not None:
             # Aquí iría el código para analizar la imagen
             st.write("Analizando imagen…")
         # Crear el archivo CSV con los resultados
-          # Crear el archivo CSV con los resultados
     with open('resultados.csv', mode='w', newline='') as file:
         writer = csv.writer(file)
         writer.writerow(["Latitud", "Longitud", "Cantidad de microplásticos", "Blancos", "Azules", "Verdes", "Amarillos", "Rojos", "Negros", "Otros"])
