@@ -53,13 +53,14 @@ if uploaded_file is not None:
     # Mostrar la imagen subida
     image = Image.open(uploaded_file)
     st.image(image, caption='Imagen subida', use_column_width=True)
-    st.write("Imagen subida exitosamente. Procesando...")
+    st.write("Procesando...")
 
 # Seleccionar la ubicación de la imagen
-st.markdown("<h2 style='text-align: center;'>Ubicación de la imagen</h2>", unsafe_allow_html=True)
-st.write("Por favor, ingrese las coordenadas de la ubicación donde se tomó la imagen:")
-latitud = st.number_input("Latitud", value=0.0000, step=0.00001, format="%.5f")
-longitud = st.number_input("Longitud", value=0.0000, step=0.00001, format="%.5f")
+if uploaded_file is not None:
+    st.markdown("<h2 style='text-align: center;'>Ubicación de la imagen</h2>", unsafe_allow_html=True)
+    st.write("Por favor, ingrese las coordenadas de la ubicación donde se tomó la imagen:")
+    latitud = st.number_input("Latitud", value=0.0000, step=0.00001, format="%.5f")
+    longitud = st.number_input("Longitud", value=0.0000, step=0.00001, format="%.5f")
 
 # Botón para iniciar el análisis
 col1, col2, col3 = st.columns([1,2,1])
