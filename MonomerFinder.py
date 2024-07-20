@@ -1,6 +1,7 @@
 import streamlit as st
 from PIL import Image
 import csv
+import pandas as pd
 
 # Definir el estilo CSS para el color de fondo
 color_reto = "#FFD700"  # Amarillo
@@ -76,3 +77,13 @@ if uploaded_file is not None:
         st.markdown("<h2 style='text-align: center;'>Descargar resultados</h2>", unsafe_allow_html=True)
         st.markdown("<p style='text-align: center;'>Haz clic en el botón para descargar los resultados del análisis de la imagen:</p>", unsafe_allow_html=True)
         st.markdown("<p style='text-align: center;'><a href='resultados.csv' download='resultados.csv'><button>Descargar resultados</button></a></p>", unsafe_allow_html=True)
+
+
+    # Crear un dataframe de ejemplo
+        data = pd.DataFrame({
+        'Frutas': ['Manzanas', 'Naranjas', 'Plátanos', 'Uvas'],
+        'Cantidad': [15, 25, 35, 45]
+        })
+        
+        # Crear un gráfico de barras
+        st.bar_chart(data)
