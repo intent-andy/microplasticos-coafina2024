@@ -62,4 +62,8 @@ latitud = st.number_input("Latitud", value=0.0000, step=0.00001, format="%.5f")
 longitud = st.number_input("Longitud", value=0.0000, step=0.00001, format="%.5f")
 
 # Botón para iniciar el análisis
-st.button("Iniciar análisis")
+if uploaded_file is not None:
+    # Mostrar el botón solo si se ha subido una imagen
+    if st.button('Analizar Imagen'):
+        # Aquí iría el código para analizar la imagen
+        st.write("Analizando imagen...")
