@@ -1,11 +1,20 @@
 import streamlit as st
 from PIL import Image
-from streamlit.components.v1 import html
+from streamlit_folium import folium_static
+import folium
 
-st.set_page_config(page_title="MonomerFinder", page_icon="🌱", layout="wide")
+def main():
+    st.set_page_config(page_title="MonomerFinder", page_icon="🌱", layout="wide")
 
-# Intro
-st.markdown("<h1 style='text-align: center;'>¡Clasifiquemos microplásticos!</h1>", unsafe_allow_html=True)
+    # Intro
+    st.markdown("<h1 style='text-align: center;'>¡Clasifiquemos microplásticos!</h1>", unsafe_allow_html=True)
+
+    st.title("Solicitud de Ubicación")
+    st.write("Por favor, ingrese su ubicación para poder realizar el análisis de la imagen.")
+    lat = st.number_input("Latitud", value=0.0)
+    lon = st.number_input("Longitud", value=0.0)
+    folium_static(lat, lon)
+
 
 # Definir el estilo CSS para el color de fondo
 color_reto = "#FFD700"  # Amarillo
@@ -47,27 +56,4 @@ if uploaded_file is not None:
     st.image(image, caption='Imagen subida', use_column_width=True)
     st.write("Imagen subida exitosamente. Procesando...")
     # Aquí puedes añadir el código para procesar la imagen
-
-# Script HTML/JavaScript para solicitar la ubicación y mostrarla
-location_script = """
-<div id="location"></div>
-<script>
-navigator.geolocation.getCurrentPosition(function(position) {
-  document.getElementById('location').innerHTML =
-    "Latitud: " + position.coords.latitude +
-    "<br>Longitud: " + position.coords.longitude;
-});
-</script>
-"""
-
-def main():
-    st.title("Solicitud de Ubicación")
-    
-    # Mostrar el script para solicitar la ubicación
-    st.markdown("## Tu Ubicación")
-    html(location_script, height=100)
-
-if __name__ == "__main__":
-    main()
-
     
