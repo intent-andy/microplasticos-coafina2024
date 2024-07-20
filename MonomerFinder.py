@@ -10,10 +10,6 @@ from nbconvert.preprocessors import ExecutePreprocessor
 with open("Software de identificación de microplásticos/software_de_identificación_de_microplasticos.ipynb") as f:
     nb = nbformat.read(f, as_version=4)
 
-# Ejecutar el notebook
-ep = ExecutePreprocessor(timeout=600, kernel_name='python3')
-ep.preprocess(nb)
-
 
 # Definir el estilo CSS para el color de fondo
 color_reto = "#FFD700"  # Amarillo
