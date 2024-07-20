@@ -55,5 +55,5 @@ if uploaded_file is not None:
 
 # Seleccionar la ubicación de la imagen
 st.markdown("<h2 style='text-align: center;'>Ubicación de la imagen</h2>", unsafe_allow_html=True)
-latitud = st.number_input("Latitud", value=0.0, step=0.0001)
-longitud = st.number_input("Longitud", value=0.0, step=0.0001)
+st.write("Por favor, seleccione en el mapa la ubicación donde se tomó la imagen.")
+st.map()
