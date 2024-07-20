@@ -8,20 +8,11 @@ st.set_page_config(page_title="PlasticDetect", page_icon="🌱", layout="wide")
 with st.container():
     st.markdown("<h1 style='text-align: center;'>¡Clasifiquemos microplásticos!</h1>", unsafe_allow_html=True)
 
-reto, defi, ries_con = st.columns(3)
-
 # Definir el estilo CSS para el color de fondo
 color_reto = "#FFD700"  # Amarillo
 color_defi = "#ADD8E6"  # Azul claro
 color_ries_con = "#90EE90"  # Verde claro
 
-
-# Colores de fondo para los títulos
-color_fondo_titulo_reto = "#333300"  # Un amarillo más oscuro
-color_fondo_titulo_defi = "#002244"  # Un azul más oscuro
-color_fondo_titulo_ries_con = "#004400"  # Un verde más oscuro
-
-# Usar las columnas con HTML y CSS para el color de fondo
 with reto:
     st.markdown(f"<h2 style='text-align: center; background-color:{color_reto}; padding: 5px; border-radius: 5px;'>¿Qué es PlasticDetect?</h2>", unsafe_allow_html=True)
     st.write("PlasticDetect es una aplicación que facilita la identificación y clasificación de microplásticos presentes en imágenes capturadas por los propios usuarios. Para esto utiliza una IA que se encarga de analizar las imágenes y señalar la cantidad de microplásticos presentes y su tipo. Esta aplicación es el resultado del Reto 5 del Hackaton Coafina 2024: 'Microplásticos: un desafío ciudadano'.")
