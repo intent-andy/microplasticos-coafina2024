@@ -1,5 +1,7 @@
 import streamlit as st
 from PIL import Image
+import csv
+import os
 
 # Definir el estilo CSS para el color de fondo
 color_reto = "#FFD700"  # Amarillo
@@ -58,3 +60,23 @@ st.markdown("<h2 style='text-align: center;'>Ubicación de la imagen</h2>", unsa
 st.write("Por favor, ingrese las coordenadas de la ubicación donde se tomó la imagen:")
 latitud = st.number_input("Latitud", value=0.0, step=0.0001)
 longitud = st.number_input("Longitud", value=0.0, step=0.0001)
+
+
+# Nombre del archivo CSV donde se guardarán las ubicaciones
+nombre_archivo_csv = 'ubicaciones.csv'
+
+# Verificar si el archivo ya existe para determinar si se debe añadir la fila de encabezado
+archivo_existe = os.path.isfile(nombre_archivo_csv)
+
+# Abrir el archivo en modo de añadir ('a') para no sobrescribir el contenido existente
+with open(nombre_archivo_csv, mode='a', newline='') as archivo:
+    escritor_csv = csv.writer(archivo)
+    
+    # Si el archivo no existía, añadir la fila de encabezado
+    if not archivo_existe:
+        escritor_csv.writerow(['Latitud', 'Longitud'])
+    
+    # Añadir las coordenadas actuales
+    escritor_csv.writerow([latitud, longitud])
+
+st.write("Ubicación registrada exitosamente.")
