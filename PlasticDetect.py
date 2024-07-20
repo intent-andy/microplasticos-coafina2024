@@ -1,5 +1,6 @@
 import streamlit as st
 from PIL import Image
+from streamlit.components.v1 import html
 
 st.set_page_config(page_title="MonomerFinder", page_icon="🌱", layout="wide")
 
@@ -46,3 +47,37 @@ if uploaded_file is not None:
     st.image(image, caption='Imagen subida', use_column_width=True)
     st.write("Imagen subida exitosamente. Procesando...")
     # Aquí puedes añadir el código para procesar la imagen
+
+# Script HTML/JavaScript para solicitar la ubicación y mostrarla
+location_script = """
+<div id="location"></div>
+<script>
+navigator.geolocation.getCurrentPosition(function(position) {
+  document.getElementById('location').innerHTML =
+    "Latitud: " + position.coords.latitude +
+    "<br>Longitud: " + position.coords.longitude;
+});
+</script>
+"""
+
+def main():
+    st.title("Solicitud de Ubicación")
+    
+    # Añadir la opción de subir una foto
+    st.markdown("<h2 style='text-align: center;'>Subir una foto para análisis</h2>", unsafe_allow_html=True)
+    uploaded_file = st.file_uploader("Elige una imagen...", type=['jpg', 'jpeg', 'png'])
+
+    if uploaded_file is not None:
+        # Mostrar la imagen subida
+        from PIL import Image
+        image = Image.open(uploaded_file)
+        st.image(image, caption='Imagen subida', use_column_width=True)
+        st.write("Imagen subida exitosamente. Procesando...")
+        # Aquí puedes añadir el código para procesar la imagen
+    
+    # Mostrar el script para solicitar la ubicación
+    st.markdown("## Tu Ubicación")
+    html(location_script, height=100)
+
+if __name__ == "__main__":
+    main()
