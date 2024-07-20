@@ -73,4 +73,4 @@ st.markdown("""
         <h2>Sube tu imagen</h2>
     </div>
     """, unsafe_allow_html=True)
-uploaded_file = st.file_uploader("Selecciona una imagen", type=["jpg", "jpeg", "png"])
+uploaded_file = st.file_uploader(" ", type=["jpg", "jpeg", "png"])
