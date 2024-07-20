@@ -24,12 +24,12 @@ with reto:
 
 with defi:
     st.markdown(f"<div style='background-color:{color_defi};padding:10px;border-radius:10px;'>", unsafe_allow_html=True)
-    st.header("¿Qué son los microplásticos?")
+    st.markdown("<h2 style='text-align: right;'>¿Qué son los microplásticos?</h2>", unsafe_allow_html=True)
     st.write("Los microplásticos son partículas de plástico de tamaño inferior a 5 mm que se encuentran en el medio ambiente y que son resultado de la degradación de plásticos más grandes. Estos pueden ser ingeridos por animales y afectar su salud, además de contaminar el agua y el suelo.")
     st.markdown("</div>", unsafe_allow_html=True)
 
 with ries_con:
     st.markdown(f"<div style='background-color:{color_ries_con};padding:10px;border-radius:10px;'>", unsafe_allow_html=True)
-    st.header("Riesgos y consecuencias")
+    st.markdown("<h2 style='text-align: center;'>Riesgos y consecuencias</h2>", unsafe_allow_html=True)
     st.write("Los microplásticos pueden tener efectos negativos en la salud de los seres vivos, ya que pueden ser ingeridos por animales y pasar a través de la cadena alimentaria. Además, pueden contaminar el agua y el suelo, afectando a los ecosistemas y a la biodiversidad.")
     st.markdown("</div>", unsafe_allow_html=True)
