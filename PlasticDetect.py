@@ -12,7 +12,7 @@ color_defi = "#ADD8E6"  # Azul claro
 color_ries_con = "#90EE90"  # Verde claro
 
 # Menú desplegable para "¿Qué es MonomerFinder?"
-with st.expander(<h1 style='text-align: center;'>¿Qué es MonomerFinder?</h1>, unsafe_allow_html=True):
+with st.expander("<h1 style='text-align: center;'>¿Qué es MonomerFinder?</h1>", unsafe_allow_html=True):
     st.markdown(f"<div style='background-color:{color_reto}; padding: 5px; border-radius: 5px;'>", unsafe_allow_html=True)
     st.write("MonomerFinder es una aplicación que facilita la identificación y clasificación de microplásticos presentes en imágenes capturadas por los propios usuarios. Para esto utiliza una IA que se encarga de analizar las imágenes y señalar la cantidad de microplásticos presentes y su tipo. Esta aplicación es el resultado del Reto 5 del Hackaton Coafina 2024: 'Microplásticos: un desafío ciudadano'.")
     st.markdown("</div>", unsafe_allow_html=True)
