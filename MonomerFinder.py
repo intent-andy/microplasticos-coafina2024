@@ -3,13 +3,6 @@ from PIL import Image
 import csv
 import matplotlib.pyplot as plt
 import numpy as np
-import nbformat
-from nbconvert.preprocessors import ExecutePreprocessor
-
-# Cargar el notebook
-with open("Software de identificación de microplásticos/software_de_identificación_de_microplasticos.ipynb") as f:
-    nb = nbformat.read(f, as_version=4)
-
 
 # Definir el estilo CSS para el color de fondo
 color_reto = "#FFD700"  # Amarillo
