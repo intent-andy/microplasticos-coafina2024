@@ -1,6 +1,7 @@
 import streamlit as st
 
-st.title("🎈 My new app")
-st.write(
-    "Let's start building! For help and inspiration, head over to [docs.streamlit.io](https://docs.streamlit.io/)."
-)
+# Set the title of the page
+st.title('Hello, Streamlit!')
+
+# Add some text
+st.write('This is my first Streamlit page.')
