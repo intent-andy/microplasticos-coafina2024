@@ -1,7 +1,6 @@
 import streamlit as st
 from PIL import Image
 import csv
-import os
 
 # Definir el estilo CSS para el color de fondo
 color_reto = "#FFD700"  # Amarillo
@@ -53,7 +52,6 @@ if uploaded_file is not None:
     # Mostrar la imagen subida
     image = Image.open(uploaded_file)
     st.image(image, caption='Imagen subida', use_column_width=True)
-    st.write("Procesando...")
 
 # Seleccionar la ubicación de la imagen
 if uploaded_file is not None:
@@ -71,3 +69,9 @@ with col3:
         if st.button('Analizar Imagen', key='analyze'):
             # Aquí iría el código para analizar la imagen
             st.write("Analizando imagen…")
+        # Guardar la localización en CSV
+        with open('localizaciones.csv', mode='a', newline='') as file:
+            writer = csv.writer(file)
+            writer.writerow([latitud, longitud])
+        
+        st.success('Localización guardada en CSV exitosamente.')
