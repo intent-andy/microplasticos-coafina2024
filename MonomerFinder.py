@@ -4,7 +4,7 @@ import csv
 import matplotlib.pyplot as plt
 import numpy as np
 import folium
-from streamlit_folium import folium_static
+from streamlit_folium import st_folium
 
 # Definir el estilo CSS para el color de fondo
 color_reto = "#FFD700"  # Amarillo
@@ -102,4 +102,4 @@ if not descripcion:
         popup=descripcion,
         icon=folium.Icon(color='blue', icon='info-sign')
     ).add_to(mapa)
-    folium_static(mapa)
+st_data = st_folium(mapa)
