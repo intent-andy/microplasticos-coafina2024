@@ -6,7 +6,7 @@ color_reto = "#FFD700"  # Amarillo
 color_defi = "#ADD8E6"  # Azul claro
 color_ries_con = "#90EE90"  # Verde claro
 
-st.header("MonomerFinder: Identificación de microplásticos en imágenes")
+st.header("<h1 style='text-align: center;'>MonomerFinder</h1>", unsafe_allow_html=True)
 
 # Menú desplegable para "¿Qué es MonomerFinder?"
 with st.expander("¿Qué es MonomerFinder?"):
