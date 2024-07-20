@@ -69,9 +69,4 @@ with col3:
         if st.button('Analizar Imagen', key='analyze'):
             # Aquí iría el código para analizar la imagen
             st.write("Analizando imagen…")
-        # Guardar la localización en CSV
-        with open('localizaciones.csv', mode='a', newline='') as file:
-            writer = csv.writer(file)
-            writer.writerow([latitud, longitud])
-        
-        st.success('Localización guardada en CSV exitosamente.')
+            
