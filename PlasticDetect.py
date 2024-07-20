@@ -35,13 +35,14 @@ with st.expander("Fuentes de microplásticos"):
     st.write("- Procesamiento de plásticos: Los pellets son perlas de plástico nuevas o recicladas que se utilizan como materia prima en la fabricación de la mayoría de los productos plásticos. Sin embargo, las pérdidas de gránulos, escamas y polvo de plástico se producen a lo largo de toda la cadena de valor de la producción, el transporte y el reciclaje de plástico. Además, el agua del proceso y las aguas residuales de la industria del plástico pueden estar muy contaminadas con microplásticos.")
     st.write("- Turismo: La eliminación inadecuada de los residuos de los turistas, los sistemas locales de gestión de residuos deficientes o inexistentes, la descarga incontrolada de aguas residuales de los cruceros y el consumo masivo de productos y envases de plástico de un solo uso en los países impulsados por el turismo, aumentan los aportes de microplásticos.")
 
-    # Añadir la opción de subir una foto
-    st.markdown("<h2 style='text-align: center;'>Subir una foto para análisis</h2>", unsafe_allow_html=True)
-    uploaded_file = st.file_uploader("Elige una imagen...", type=['jpg', 'jpeg', 'png'])
+    st.markdown("</div>", unsafe_allow_html=True)
+# Añadir la opción de subir una foto
+st.markdown("<h2 style='text-align: center;'>Subir una foto para análisis</h2>", unsafe_allow_html=True)
+uploaded_file = st.file_uploader("Elige una imagen...", type=['jpg', 'jpeg', 'png'])
 
-    if uploaded_file is not None:
-        # Mostrar la imagen subida
-        image = Image.open(uploaded_file)
-        st.image(image, caption='Imagen subida', use_column_width=True)
-        st.write("Imagen subida exitosamente. Procesando...")
-        # Aquí puedes añadir el código para procesar la imagen
+if uploaded_file is not None:
+    # Mostrar la imagen subida
+    image = Image.open(uploaded_file)
+    st.image(image, caption='Imagen subida', use_column_width=True)
+    st.write("Imagen subida exitosamente. Procesando...")
+    # Aquí puedes añadir el código para procesar la imagen
