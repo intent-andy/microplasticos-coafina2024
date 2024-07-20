@@ -2,6 +2,7 @@ import streamlit as st
 from PIL import Image
 import csv
 import matplotlib.pyplot as plt
+import numpy as np
 
 # Definir el estilo CSS para el color de fondo
 color_reto = "#FFD700"  # Amarillo
@@ -78,12 +79,11 @@ if uploaded_file is not None:
         st.markdown("<p style='text-align: center;'>Haz clic en el botón para descargar los resultados del análisis de la imagen:</p>", unsafe_allow_html=True)
         st.markdown("<p style='text-align: center;'><a href='resultados.csv' download='resultados.csv'><button>Descargar resultados</button></a></p>", unsafe_allow_html=True)
 
-    # Datos para graficar
-        etiquetas = 'Blancos', 'Azules', 'Verdes', 'Amarillos', 'Rojos', 'Negros', 'Otros'
-        tamaños = [1, 1, 3, 5, 6, 4, 1]
-        
-        # Crear una gráfica circular (tarta)
-        plt.pie(tamaños, labels=etiquetas, autopct='%1.1f%%')
-        
-        # Mostrar la gráfica en Streamlit
-        st.pyplot()
+    # Generar algunos datos aleatorios
+    datos = np.random.normal(0, 1, size=100)
+    
+    # Crear un histograma
+    plt.hist(datos, bins=20)
+    
+    # Mostrar el histograma en Streamlit
+    st.pyplot()
