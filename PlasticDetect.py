@@ -53,13 +53,8 @@ if uploaded_file is not None:
     st.image(image, caption='Imagen subida', use_column_width=True)
     st.write("Imagen subida exitosamente. Procesando...")
 
-import folium
-from streamlit_folium import folium_static
-from folium.plugins import MarkerCluster
-
 # Seleccionar la ubicación de la imagen
 st.markdown("<h2 style='text-align: center;'>Ubicación de la imagen</h2>", unsafe_allow_html=True)
-st.write("Por favor, seleccione en el mapa la ubicación donde se tomó la imagen.")
-
-# Crear un mapa interactivo
-st.map()
+st.write("Por favor, ingrese las coordenadas de la ubicación donde se tomó la imagen:")
+latitud = st.number_input("Latitud", value=0.0, step=0.0001)
+longitud = st.number_input("Longitud", value=0.0, step=0.0001)
