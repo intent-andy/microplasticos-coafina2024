@@ -4,7 +4,6 @@ import csv
 import matplotlib.pyplot as plt
 import numpy as np
 import folium
-import folium
 from streamlit_folium import folium_static
 
 # Definir el estilo CSS para el color de fondo
