@@ -3,6 +3,18 @@ from PIL import Image
 import csv
 import matplotlib.pyplot as plt
 import numpy as np
+import nbformat
+from nbconvert.preprocessors import ExecutePreprocessor
+
+# Cargar el notebook
+with open("Software de identificación de microplásticos/software_de_identificación_de_microplasticos.ipynb") as f:
+    nb = nbformat.read(f, as_version=4)
+
+# Ejecutar el notebook
+ep = ExecutePreprocessor(timeout=600, kernel_name='python3')
+ep.preprocess(nb)
+
+
 # Definir el estilo CSS para el color de fondo
 color_reto = "#FFD700"  # Amarillo
 color_defi = "#ADD8E6"  # Azul claro
@@ -45,43 +57,4 @@ with st.expander("Fuentes de microplásticos"):
 
     st.markdown("</div>", unsafe_allow_html=True)
 
-# Subir una imagen para análisis
-st.markdown("<h2 style='text-align: center;'>Subir una foto para análisis</h2>", unsafe_allow_html=True)
-uploaded_file = st.file_uploader("Elige una imagen...", type=['jpg', 'jpeg', 'png'])
-
-if uploaded_file is not None:
-    # Mostrar la imagen subida
-    image = Image.open(uploaded_file)
-    st.image(image, caption='Imagen subida', use_column_width=True)
-
-# Seleccionar la ubicación de la imagen
-if uploaded_file is not None:
-    st.markdown("<h2 style='text-align: center;'>Ubicación de la imagen</h2>", unsafe_allow_html=True)
-    st.write("Por favor, ingrese las coordenadas de la ubicación donde se tomó la imagen:")
-    latitud = st.number_input("Latitud", value=0.0000, step=0.00001, format="%.5f")
-    longitud = st.number_input("Longitud", value=0.0000, step=0.00001, format="%.5f")
-
-# Botón para iniciar el análisis
-    if uploaded_file is not None:
-        # Mostrar el botón solo si se ha subido una imagen
-        if st.button('Analizar Imagen', key='analyze'):
-            # Aquí iría el código para analizar la imagen
-            st.write("Analizando imagen…")
-        # Crear el archivo CSV con los resultados
-    with open('resultados.csv', mode='w', newline='') as file:
-        writer = csv.writer(file)
-        writer.writerow(["Latitud", "Longitud", "Cantidad de microplásticos", "Blancos", "Azules", "Verdes", "Amarillos", "Rojos", "Negros", "Otros"])
-        
-    # Descargar el archivo CSV
-        st.markdown("<h2 style='text-align: center;'>Descargar resultados</h2>", unsafe_allow_html=True)
-        st.markdown("<p style='text-align: center;'>Haz clic en el botón para descargar los resultados del análisis de la imagen:</p>", unsafe_allow_html=True)
-        st.markdown("<p style='text-align: center;'><a href='resultados.csv' download='resultados.csv'><button>Descargar resultados</button></a></p>", unsafe_allow_html=True)
-
-    # Generar algunos datos aleatorios
-    datos = np.random.normal(0, 1, size=100)
-    
-    # Crear un histograma
-    plt.hist(datos, bins=20)
-    
-    # Mostrar el histograma en Streamlit
-    st.pyplot()
+# Sistema de identificación de microplásticos
