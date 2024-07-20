@@ -27,7 +27,7 @@ with reto:
         <style>
         .stMarkdown > div {
             background-color: #FFD700; /* Amarillo */
-            min-height: 500px; /* Ajusta esto según tus necesidades */
+            min-height: 10px; /* Ajusta esto según tus necesidades */
             padding: 10px;
             border-radius: 10px;
         }
