@@ -79,8 +79,8 @@ if uploaded_file is not None:
         st.markdown("<p style='text-align: center;'><a href='resultados.csv' download='resultados.csv'><button>Descargar resultados</button></a></p>", unsafe_allow_html=True)
 
     # Datos para graficar
-        etiquetas = 'Python', 'Java', 'C++', 'JavaScript'
-        tamaños = [215, 130, 245, 210]
+        etiquetas = 'Blancos', 'Azules', 'Verdes', 'Amarillos', 'Rojos', 'Negros', 'Otros'
+        tamaños = [1, 1, 3, 5, 6, 4, 1]
         
         # Crear una gráfica circular (tarta)
         plt.pie(tamaños, labels=etiquetas, autopct='%1.1f%%')
