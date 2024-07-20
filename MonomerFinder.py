@@ -53,10 +53,13 @@ st.write("""
 }
 </style>
 <div class="centered">
-    <h1>Bienvenido al Software de conteo y reconocimiento de microplásticos</h1>
+    <h1>¡Vamos a identificar y contar microplásticos!</h1>
 </div>
 """, unsafe_allow_html=True)
 st.write("Recuerda:")
 st.write("1-.Tener a la mano tu ubicación")
 st.write("2-.La fotos deben ser de microplásticos filtrados es decir sin ningún otro material en lo posible")
 st.write("3-.Las fotos deben ser claras para obtener mejores resultados")
+
+# Solicitar al usuario que ingrese el nombre del archivo de imagen
+uploaded_file = st.file_uploader("Sube la imagen en que quieres analizar", type=["jpg", "jpeg", "png"])
