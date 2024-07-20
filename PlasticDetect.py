@@ -1,7 +1,7 @@
-import streamlit as st
-from PIL import Image
 import csv
 import os
+from PIL import Image
+import streamlit as st
 
 # Definir el estilo CSS para el color de fondo
 color_reto = "#FFD700"  # Amarillo
@@ -55,10 +55,7 @@ if uploaded_file is not None:
     st.image(image, caption='Imagen subida', use_column_width=True)
     st.write("Imagen subida exitosamente. Procesando...")
 
-import csv
-import os
-from PIL import Image
-import streamlit as st
+
 
 st.markdown("<h2 style='text-align: center;'>Subir una foto para análisis</h2>", unsafe_allow_html=True)
 uploaded_file = st.file_uploader("Elige una imagen...", type=['jpg', 'jpeg', 'png'])
