@@ -60,19 +60,6 @@ from folium.plugins import MarkerCluster
 # Seleccionar la ubicación de la imagen
 st.markdown("<h2 style='text-align: center;'>Ubicación de la imagen</h2>", unsafe_allow_html=True)
 st.write("Por favor, seleccione en el mapa la ubicación donde se tomó la imagen.")
-
-# Mapa interactivo
-m = folium.Map(location=[40.416775, -3.703790], zoom_start=4)  # Puedes cambiar la ubicación inicial
-
-# Opcional: Añadir MarkerCluster para agrupar marcadores si esperas muchos clics
+m = folium.Map(location=[-34.61, -58.44], zoom_start=12)
 marker_cluster = MarkerCluster().add_to(m)
-
-# Añadir un marcador con un popup que se muestra al hacer clic (ejemplo)
-folium.Marker(
-    [40.416775, -3.703790], 
-    popup='Ubicación seleccionada',
-    tooltip='Haz clic para seleccionar esta ubicación'
-).add_to(marker_cluster)
-
-# Mostrar el mapa en Streamlit
 folium_static(m)
