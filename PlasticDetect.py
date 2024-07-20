@@ -43,19 +43,8 @@ if uploaded_file is not None:
     image = Image.open(uploaded_file)
     st.image(image, caption='Imagen subida', use_column_width=True)
     st.write("Imagen subida exitosamente. Procesando...")
-    # Aquí puedes añadir el código para procesar la imagen
 
-# Función para crear y mostrar un mapa
-def mostrar_mapa():
-    # Crear un mapa con una ubicación central
-    m = folium.Map(location=[40.416775, -3.703790], zoom_start=10)  # Ejemplo con Madrid, España
-
-    # Opcional: Añadir un marcador al mapa
-    folium.Marker([40.416775, -3.703790], tooltip='Click me', popup='Ubicación central').add_to(m)
-
-    # Mostrar el mapa en Streamlit
-    folium_static(m)
-
-# Llamar a la función para mostrar el mapa
-mostrar_mapa()
-    
+# Añadir un mapa interactivo
+st.markdown("<h2 style='text-align: center;'>Mapa interactivo</h2>", unsafe_allow_html=True)
+m = folium.Map(location=[-34.61, -58.44], zoom_start=10)
+folium_static(m)
