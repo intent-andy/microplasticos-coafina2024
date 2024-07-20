@@ -69,9 +69,8 @@ if uploaded_file is not None:
     # Crear el archivo CSV con los resultados
     with open('resultados.csv', mode='w', newline='') as file:
         writer = csv.writer(file)
-        writer.writerow([Nombre de la imagen, Latitud, Longitud, Total de microplásticos, Azules, Verdes, Rojos, Amarillos, Blancos, Otros])
-        writer.writerow([uploaded_file.name, latitud, longitud, 10, 2, 3, 1, 2, 1, 1])
+        writer.writerow(["Latitud", "Longitud", "Cantidad de microplásticos", "Blancos", "Azules", "Verdes", "Amarillos", "Rojos", "Negros", "Otros"])
     st.write("¡Análisis completado! Puedes descargar los resultados en formato CSV.")
-     
+
 
     
