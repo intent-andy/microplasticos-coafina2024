@@ -1,20 +1,5 @@
 import streamlit as st
 from PIL import Image
-from streamlit_folium import folium_static
-import folium
-
-def main():
-    st.set_page_config(page_title="MonomerFinder", page_icon="🌱", layout="wide")
-
-    # Intro
-    st.markdown("<h1 style='text-align: center;'>¡Clasifiquemos microplásticos!</h1>", unsafe_allow_html=True)
-
-    st.title("Solicitud de Ubicación")
-    st.write("Por favor, ingrese su ubicación para poder realizar el análisis de la imagen.")
-    lat = st.number_input("Latitud", value=0.0)
-    lon = st.number_input("Longitud", value=0.0)
-    folium_static(lat, lon)
-
 
 # Definir el estilo CSS para el color de fondo
 color_reto = "#FFD700"  # Amarillo
@@ -46,6 +31,7 @@ with st.expander("Fuentes de microplásticos"):
     st.write("- Turismo: La eliminación inadecuada de los residuos de los turistas, los sistemas locales de gestión de residuos deficientes o inexistentes, la descarga incontrolada de aguas residuales de los cruceros y el consumo masivo de productos y envases de plástico de un solo uso en los países impulsados por el turismo, aumentan los aportes de microplásticos.")
 
     st.markdown("</div>", unsafe_allow_html=True)
+
 # Añadir la opción de subir una foto
 st.markdown("<h2 style='text-align: center;'>Subir una foto para análisis</h2>", unsafe_allow_html=True)
 uploaded_file = st.file_uploader("Elige una imagen...", type=['jpg', 'jpeg', 'png'])
