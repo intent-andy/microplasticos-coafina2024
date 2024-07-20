@@ -1,7 +1,7 @@
+import streamlit as st
+from PIL import Image
 import csv
 import os
-from PIL import Image
-import streamlit as st
 
 # Definir el estilo CSS para el color de fondo
 color_reto = "#FFD700"  # Amarillo
@@ -55,43 +55,11 @@ if uploaded_file is not None:
     st.image(image, caption='Imagen subida', use_column_width=True)
     st.write("Imagen subida exitosamente. Procesando...")
 
-
-
-st.markdown("<h2 style='text-align: center;'>Subir una foto para análisis</h2>", unsafe_allow_html=True)
-uploaded_file = st.file_uploader("Elige una imagen...", type=['jpg', 'jpeg', 'png'])
-
-if uploaded_file is not None:
-    # Mostrar la imagen subida
-    image = Image.open(uploaded_file)
-    st.image(image, caption='Imagen subida', use_column_width=True)
-    st.write("Imagen subida exitosamente. Procesando...")
-
-    # Seleccionar la ubicación de la imagen
-    st.markdown("<h2 style='text-align: center;'>Ubicación de la imagen</h2>", unsafe_allow_html=True)
-    st.write("Por favor, ingrese las coordenadas de la ubicación donde se tomó la imagen:")
-    latitud = st.number_input("Latitud", value=0.0, step=0.0001)
-    longitud = st.number_input("Longitud", value=0.0, step=0.0001)
-
-    # Botón para confirmar la carga de la ubicación
-    if st.button('Cargar Ubicación'):
-        # Nombre del archivo CSV donde se guardarán las ubicaciones
-        nombre_archivo_csv = 'ubicaciones.csv'
-
-        # Verificar si el archivo ya existe para determinar si se debe añadir la fila de encabezado
-        archivo_existe = os.path.isfile(nombre_archivo_csv)
-
-        # Abrir el archivo en modo de añadir ('a') para no sobrescribir el contenido existente
-        with open(nombre_archivo_csv, mode='a', newline='') as archivo:
-            escritor_csv = csv.writer(archivo)
-            
-            # Si el archivo no existía, añadir la fila de encabezado
-            if not archivo_existe:
-                escritor_csv.writerow(['Latitud', 'Longitud'])
-            
-            # Añadir las coordenadas actuales
-            escritor_csv.writerow([latitud, longitud])
-
-        st.write("Ubicación registrada exitosamente.")
+# Seleccionar la ubicación de la imagen
+st.markdown("<h2 style='text-align: center;'>Ubicación de la imagen</h2>", unsafe_allow_html=True)
+st.write("Por favor, ingrese las coordenadas de la ubicación donde se tomó la imagen:")
+latitud = st.number_input("Latitud", value=0.0, step=0.0001)
+longitud = st.number_input("Longitud", value=0.0, step=0.0001)
 st.image(image, caption='Imagen subida', use_column_width=True)
 st.write("Imagen subida exitosamente. Procesando...")
 
