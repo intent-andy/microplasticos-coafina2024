@@ -3,8 +3,6 @@ from PIL import Image
 import csv
 import matplotlib.pyplot as plt
 import numpy as np
-import folium
-from streamlit_folium import st_folium
 
 # Definir el estilo CSS para el color de fondo
 color_reto = "#FFD700"  # Amarillo
