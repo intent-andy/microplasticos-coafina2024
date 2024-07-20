@@ -64,7 +64,7 @@ longitud = st.number_input("Longitud", value=0.0000, step=0.00001, format="%.5f"
 # Botón para iniciar el análisis
 col1, col2, col3 = st.columns([1,2,1])
 
-with col2:
+with col3:
     if uploaded_file is not None:
         # Mostrar el botón solo si se ha subido una imagen
         if st.button('Analizar Imagen', key='analyze'):
