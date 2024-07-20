@@ -1,6 +1,19 @@
 import streamlit as st
 from PIL import Image
 
+# Usar HTML para personalizar el tamaño del texto dentro del expander
+expander = st.expander("Título del Expander")
+with expander:
+    # Cambiar el tamaño del texto a 20px
+    st.markdown("""
+    <style>
+    .texto-personalizado {
+        font-size: 20px;
+    }
+    </style>
+    <div class="texto-personalizado">Este es el contenido del expander con el texto de tamaño personalizado.</div>
+    """, unsafe_allow_html=True)
+    
 st.set_page_config(page_title="MonomerFinder", page_icon="🌱", layout="wide")
 
 # Intro
