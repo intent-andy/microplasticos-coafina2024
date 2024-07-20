@@ -63,21 +63,11 @@ navigator.geolocation.getCurrentPosition(function(position) {
 def main():
     st.title("Solicitud de Ubicación")
     
-    # Añadir la opción de subir una foto
-    st.markdown("<h2 style='text-align: center;'>Subir una foto para análisis</h2>", unsafe_allow_html=True)
-    uploaded_file = st.file_uploader("Elige una imagen...", type=['jpg', 'jpeg', 'png'])
-
-    if uploaded_file is not None:
-        # Mostrar la imagen subida
-        from PIL import Image
-        image = Image.open(uploaded_file)
-        st.image(image, caption='Imagen subida', use_column_width=True)
-        st.write("Imagen subida exitosamente. Procesando...")
-        # Aquí puedes añadir el código para procesar la imagen
-    
     # Mostrar el script para solicitar la ubicación
     st.markdown("## Tu Ubicación")
     html(location_script, height=100)
 
 if __name__ == "__main__":
     main()
+
+    
