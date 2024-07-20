@@ -1,5 +1,7 @@
 import streamlit as st
 from PIL import Image
+import folium
+from streamlit_folium import folium_static
 
 # Definir el estilo CSS para el color de fondo
 color_reto = "#FFD700"  # Amarillo
@@ -41,3 +43,14 @@ if uploaded_file is not None:
     image = Image.open(uploaded_file)
     st.image(image, caption='Imagen subida', use_column_width=True)
     st.write("Imagen subida exitosamente. Procesando...")
+
+
+# Ubicación en el mapa
+st.header("Selecciona el lugar donde tomaste la foto")
+
+# Mapa interactivo con Folium
+m = folium.Map(location=[10.48801, -66.87919], zoom_start=5)
+folium.Marker([10.48801, -66.87919], popup='<i>Caracas</i>').add_to(m)
+
+# Mostrar el mapa en Streamlit
+folium_static(m)
