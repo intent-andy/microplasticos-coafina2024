@@ -45,8 +45,17 @@ with st.expander("Fuentes de microplásticos"):
     st.write("- Turismo: La eliminación inadecuada de los residuos de los turistas, los sistemas locales de gestión de residuos deficientes o inexistentes, la descarga incontrolada de aguas residuales de los cruceros y el consumo masivo de productos y envases de plástico de un solo uso en los países impulsados por el turismo, aumentan los aportes de microplásticos.")
     st.markdown("</div>", unsafe_allow_html=True)
 
-##Software de conteo
-st.markdown("Bienvenido al Software de conteo y reconocimiento de microplásticos")
+# Software de MonomerFinder
+st.write("""
+<style>
+.centered {
+    text-align: center;
+}
+</style>
+<div class="centered">
+    <h1>Bienvenido al Software de conteo y reconocimiento de microplásticos</h1>
+</div>
+""", unsafe_allow_html=True)
 st.write("Recuerda:")
 st.write("1-.Tener a la mano tu ubicación")
 st.write("2-.La fotos deben ser de microplásticos filtrados es decir sin ningún otro material en lo posible")
