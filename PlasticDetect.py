@@ -60,6 +60,6 @@ from folium.plugins import MarkerCluster
 # Seleccionar la ubicación de la imagen
 st.markdown("<h2 style='text-align: center;'>Ubicación de la imagen</h2>", unsafe_allow_html=True)
 st.write("Por favor, seleccione en el mapa la ubicación donde se tomó la imagen.")
-m = folium.Map(location=[-34.61, -58.44], zoom_start=12)
-marker_cluster = MarkerCluster().add_to(m)
-folium_static(m)
+
+# Crear un mapa interactivo
+st.map()
