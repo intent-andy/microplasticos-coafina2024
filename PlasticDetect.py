@@ -106,9 +106,7 @@ if st.button("Iniciar análisis"):
             writer = csv.writer(file)
             writer.writerow([5, "Polietileno", 0.000, 0.000])
             writer.writerow([5, "Polietileno", 0.001, 0.001])
-            writer.writerow([5, "
-            Polietileno", 0.002, 0.002])
+            writer.writerow([5, "Polietileno", 0.002, 0.002])
             writer.writerow([5, "Polietileno", 0.003, 0.003])
             writer.writerow([5, "Polietileno", 0.004, 0.004])
     st.write("Los resultados se han guardado exitosamente en el archivo 'resultados.csv'.")
-    
