@@ -62,4 +62,4 @@ st.write("2-.La fotos deben ser de microplásticos filtrados es decir sin ningú
 st.write("3-.Las fotos deben ser claras para obtener mejores resultados")
 
 # Solicitar al usuario que ingrese el nombre del archivo de imagen
-uploaded_file = st.file_uploader("<h2>Sube tu imagen aquí</h2>", type=["jpg", "jpeg", "png"])
+st.write("<h2>Sube tu imagen</h2>", unsafe_allow_html=True)
