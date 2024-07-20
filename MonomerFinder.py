@@ -69,4 +69,14 @@ with col3:
         if st.button('Analizar Imagen', key='analyze'):
             # Aquí iría el código para analizar la imagen
             st.write("Analizando imagen…")
-            
+        # Crear el archivo CSV con los resultados
+        with open('resultados.csv', mode='w', newline='') as file:
+            writer = csv.writer(file)
+            writer.writerow(["Latitud", "Longitud", "Cantidad de microplásticos", "Tipo de microplástico"])
+            writer.writerow([latitud, longitud, "2", "Fibra"])
+            writer.writerow([latitud, longitud, "1", "Fragmento"])
+            writer.writerow([latitud, longitud, "3", "Pellet"])
+        # Descargar el archivo CSV
+        st.markdown("<h2 style='text-align: center;'>Descargar resultados</h2>", unsafe_allow_html=True)
+        st.markdown("<p style='text-align: center;'>Haz clic en el botón para descargar los resultados del análisis de la imagen:</p>", unsafe_allow_html=True)
+        st.markdown("<p style='text-align: center;'><a href='resultados.csv' download='resultados.csv'><button>Descargar resultados</button></a></p>", unsafe_allow_html=True)
