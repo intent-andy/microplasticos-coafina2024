@@ -3,6 +3,9 @@ from PIL import Image
 import csv
 import matplotlib.pyplot as plt
 import numpy as np
+import folium
+import folium
+from streamlit_folium import folium_static
 
 # Definir el estilo CSS para el color de fondo
 color_reto = "#FFD700"  # Amarillo
@@ -74,3 +77,30 @@ st.markdown("""
     </div>
     """, unsafe_allow_html=True)
 uploaded_file = st.file_uploader(" ", type=["jpg", "jpeg", "png"])
+
+# Solicitar ubicación
+st.markdown("""
+    <style>
+    .center {
+        display: flex;
+        justify-content: center;
+    }
+    </style>
+    <div class="center">
+        <h2>Ingresa tu ubicación</h2>
+    </div>
+    """, unsafe_allow_html=True)
+
+latitud = st.number_input('Latitud', value=0.0, format="%.6f")
+longitud = st.number_input('Longitud', value=0.0, format="%.6f")
+descripcion = st.text_input('Descripción de la ubicación (opcional)')
+pais = st.text_input('País')
+if not descripcion:
+    descripcion = f'Ubicación: {latitud}, {longitud}, País: {pais}'
+    mapa = folium.Map(location=[float(latitud), float(longitud)], zoom_start=15)
+    folium.Marker(
+        location=[float(latitud), float(longitud)],
+        popup=descripcion,
+        icon=folium.Icon(color='blue', icon='info-sign')
+    ).add_to(mapa)
+    folium_static(mapa)
