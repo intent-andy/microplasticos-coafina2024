@@ -41,13 +41,6 @@ with col1:
         st.image("RaceforWater_PeterCharaf_MicroplasticsAzores_(2).jpg", use_column_width=True)
         st.markdown("</div>", unsafe_allow_html=True)
 
-    # Menú desplegable para "¿Qué son los microplásticos?"
-    with st.expander("¿Qué son los microplásticos?"):
-        st.markdown(f"<div style='background-color:{color_defi}; padding: 5px; border-radius: 5px;'>", unsafe_allow_html=True)
-        st.write("Los microplásticos son diminutas partículas de plástico, generalmente con tamaños menores a 5 mm, que se han convertido en un problema ambiental global. Provienen de diversas fuentes, como la degradación de objetos plásticos más grandes, productos cosméticos y fibras sintéticas de la ropa. Estos diminutos fragmentos contaminan océanos, ríos, suelos e incluso el aire, siendo ingeridos por organismos marinos y terrestres, lo que puede llevar a su acumulación en la cadena alimentaria. Su persistencia en el medio ambiente y sus potenciales efectos negativos en la salud humana y de los ecosistemas son motivo de creciente preocupación entre científicos y ambientalistas.")
-        st.image("Microplastic.jpg", use_column_width=True)
-        st.markdown("</div>", unsafe_allow_html=True)
-
     # Menú desplegable adicional para "Fuentes de microplásticos"
     with st.expander("Fuentes de microplásticos"):
         st.markdown(f"<div style='background-color:{color_ries_con}; padding: 5px; border-radius: 5px;'>", unsafe_allow_html=True)
@@ -61,7 +54,14 @@ with col1:
         st.write("- Turismo: La eliminación inadecuada de los residuos de los turistas, los sistemas locales de gestión de residuos deficientes o inexistentes, la descarga incontrolada de aguas residuales de los cruceros y el consumo masivo de productos y envases de plástico de un solo uso en los países impulsados por el turismo, aumentan los aportes de microplásticos.")
         st.image("Pollution_on_Land.jpg", use_column_width=True)
         st.markdown("</div>", unsafe_allow_html=True)
-    
+
+with col2:
+    # Menú desplegable para "¿Qué son los microplásticos?"
+    with st.expander("¿Qué son los microplásticos?"):
+        st.markdown(f"<div style='background-color:{color_defi}; padding: 5px; border-radius: 5px;'>", unsafe_allow_html=True)
+        st.write("Los microplásticos son diminutas partículas de plástico, generalmente con tamaños menores a 5 mm, que se han convertido en un problema ambiental global. Provienen de diversas fuentes, como la degradación de objetos plásticos más grandes, productos cosméticos y fibras sintéticas de la ropa. Estos diminutos fragmentos contaminan océanos, ríos, suelos e incluso el aire, siendo ingeridos por organismos marinos y terrestres, lo que puede llevar a su acumulación en la cadena alimentaria. Su persistencia en el medio ambiente y sus potenciales efectos negativos en la salud humana y de los ecosistemas son motivo de creciente preocupación entre científicos y ambientalistas.")
+        st.image("Microplastic.jpg", use_column_width=True)
+        st.markdown("</div>", unsafe_allow_html=True)    
 
 # Software de MonomerFinder
 st.write("""
