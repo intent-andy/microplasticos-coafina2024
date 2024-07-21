@@ -191,7 +191,7 @@ if st.button("Analizar imagen"):
 
     # Mostrar la imagen con las cajas del modelo de IA
     st.write("La imagen ha sido procesada y se han identificado los microplásticos presentes en ella.")
-    st.image("Identificación.png", use_column_width=True)
+    st.image("Identificación.jpg", use_column_width=True)
 
     # Mostrar los resultados en un gráfico de barras y en una tabla
     Resultados = {
