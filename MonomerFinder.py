@@ -196,7 +196,7 @@ if st.button("Analizar imagen"):
     
     # Mostrar los resultados en un gráfico de barras
     fig, ax = plt.subplots()
-    ax.bar(df['data_column'], df['microplastic_type'])
+    ax.bar(df['microplastic_type'], df['data_column'])
     ax.set_xlabel('Cantidad de microplásticos')
     ax.set_ylabel('Tipo de microplástico')
     st.pyplot(fig)
