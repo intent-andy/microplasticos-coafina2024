@@ -208,32 +208,6 @@ if st.button("Analizar imagen"):
     st.write("A continuación se presenta una tabla con los resultados obtenidos:")
     st.table(df)
 
-# Descargar los resultados en un archivo CSV
-st.markdown("""
-    <style>
-    .center {
-        display: flex;
-        justify-content: center;
-    }
-    </style>
-    <div class="center">
-        <h2>Descargar resultados</h2>
-    </div>
-    """, unsafe_allow_html=True)
-st.write("Haz clic en el botón para descargar los resultados del análisis en un archivo CSV.")
-
-# Convertir el DataFrame a CSV en memoria
-csv = StringIO()
-df.to_csv(Resultados, index=False)
-csv.seek(0)
-
-# Crear el botón de descarga
-st.download_button(
-    label="Descargar resultados",
-    data=csv,
-    file_name="Resultados.csv",
-    mime="text/csv",
-)
 
 # Protocolo de estimación de microplásticos en la arena
 st.markdown("""
