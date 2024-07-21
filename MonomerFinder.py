@@ -131,7 +131,13 @@ st.markdown("""
     </div>
     """, unsafe_allow_html=True)
 
-st.write("En este ejemplo se ha cargado una imagen de microplásticos filtrados para su análisis.")
+st.write("En este ejemplo se ha cargado una imagen de microplásticos filtrados para su análisis, haz clic en el botón 'Subir archivo' para continuar.")
+
+if st.button("Subir archivo"):
+    uploaded_file = "d--52-_jpg.rf.086e80a05c54229e7189ec3bc38c9940.jpg"
+    image = Image.open(uploaded_file)
+    st.image(image, caption="Imagen cargada", use_column_width=True)
+
 
 # Ubicación en el mapa
 st.markdown("""
