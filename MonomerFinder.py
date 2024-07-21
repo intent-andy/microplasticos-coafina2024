@@ -31,7 +31,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Separar en columnas el contenido
-col1, col2 = st.columns([1, 2])
+col1, col2 = st.columns([1, 1])
 
 with col1:
     # Menú desplegable para "¿Qué es MonomerFinder?"
