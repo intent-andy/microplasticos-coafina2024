@@ -137,53 +137,60 @@ if st.button("Comenzar"):
     st.write("En este caso se ha subido una imagen de ejemplo, haz clic en el botón 'Seleccionar archivo' para continuar.")
     
     # Seleccionar una imagen
-    st.image("P061337-98078.jpg", use_column_width=True)
-    if st.button("Seleccionar archivo"):
-        st.markdown("""
-            <style>
-            .center {
-                display: flex;
-                justify-content: center;
-            }
-            </style>
-            <div class="center">
-                <h2>Ingresa tu ubicación</h2>
-            </div>
-            """, unsafe_allow_html=True)
-        # Solicitar los datos de ubicación
-        latitud = st.number_input('Latitud', value=0.0, format="%.6f")
-        longitud = st.number_input('Longitud', value=0.0, format="%.6f")
-        descripcion = st.text_input('Descripción de la ubicación (opcional)')
+    col1, col2 = st.columns([1, 1])
+    with col1:
+        st.image("d--52-_jpg.rf.086e80a05c54229e7189ec3bc38c9940.jpg", use_column_width=True)
 
-        # Ubicación en el mapa
-        st.markdown("""
-            <style>
-            .center {
-                display: flex;
-                justify-content: center;
-            }
-            </style>
-            <div class="center">
-                <h2>Ubicación en el mapa</h2>
-            </div>
-            """, unsafe_allow_html=True)
-        st.map(pd.DataFrame({'lat': [latitud], 'lon': [longitud], 'zoom': [1]}))
+    with col2:
+        if st.button("Seleccionar archivo"):
+            st.write("¡Archivo seleccionado!")
 
-
-
-        # Mostrar los resultados
         
-
-
-    # Protocolo de estimación de microplásticos en la arena
-
     st.markdown("""
         <style>
-        .centered {
-            text-align: center;
+        .center {
+            display: flex;
+            justify-content: center;
         }
         </style>
-        <div class="centered">
-            <h2>Protocolo de estimación de microplásticos en la arena</h2>
+        <div class="center">
+            <h2>Ingresa tu ubicación</h2>
         </div>
         """, unsafe_allow_html=True)
+    # Solicitar los datos de ubicación
+    latitud = st.number_input('Latitud', value=0.0, format="%.6f")
+    longitud = st.number_input('Longitud', value=0.0, format="%.6f")
+    descripcion = st.text_input('Descripción de la ubicación (opcional)')
+
+    # Ubicación en el mapa
+    st.markdown("""
+        <style>
+        .center {
+            display: flex;
+            justify-content: center;
+        }
+        </style>
+        <div class="center">
+            <h2>Ubicación en el mapa</h2>
+        </div>
+        """, unsafe_allow_html=True)
+    st.map(pd.DataFrame({'lat': [latitud], 'lon': [longitud], 'zoom': [1]}))
+
+
+
+    # Mostrar los resultados
+    
+
+
+# Protocolo de estimación de microplásticos en la arena
+
+st.markdown("""
+    <style>
+    .centered {
+        text-align: center;
+    }
+    </style>
+    <div class="centered">
+        <h2>Protocolo de estimación de microplásticos en la arena</h2>
+    </div>
+    """, unsafe_allow_html=True)
