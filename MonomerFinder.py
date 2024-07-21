@@ -142,31 +142,24 @@ st.markdown("""
         <h2>Ingresa tu ubicación</h2>
     </div>
     """, unsafe_allow_html=True)
+# Solicitar los datos de ubicación
+latitud = st.number_input('Latitud', value=0.0, format="%.6f")
+longitud = st.number_input('Longitud', value=0.0, format="%.6f")
+descripcion = st.text_input('Descripción de la ubicación (opcional)')
 
-def solicitar_datos():
-  latitud = st.number_input('Latitud', value=0.0, format="%.6f")
-  longitud = st.number_input('Longitud', value=0.0, format="%.6f")
-  descripcion = st.text_input('Descripción de la ubicación (opcional)')
-
-  # Ubicación en el mapa
-  st.markdown("""
-      <style>
-      .center {
-          display: flex;
-          justify-content: center;
-      }
-      </style>
-      <div class="center">
-          <h2>Ubicación en el mapa</h2>
-      </div>
-      """, unsafe_allow_html=True)
-  st.map(pd.DataFrame({'lat': [latitud], 'lon': [longitud], 'zoom': [1]}))
-
-# Solicitar los datos
-ubicacion_data = []
-entrada = solicitar_datos()
-if entrada:
-    ubicacion_data.append(entrada)
+# Ubicación en el mapa
+st.markdown("""
+    <style>
+    .center {
+        display: flex;
+        justify-content: center;
+    }
+    </style>
+    <div class="center">
+        <h2>Ubicación en el mapa</h2>
+    </div>
+    """, unsafe_allow_html=True)
+st.map(pd.DataFrame({'lat': [latitud], 'lon': [longitud], 'zoom': [1]}))
 
 # Protocolo de estimación de microplásticos en la arena
 
@@ -185,9 +178,9 @@ st.markdown("""
 if uploaded_file is not None:
     # Guardar la ubicación y el nombre del archivo en un diccionario
     data_to_save = {
-        "latitud": ubicacion_data[0],
-        "longitud": ubicacion_data[1],
-        "imagen": uploaded_file.name
+        "latitud": latitud,
+        "longitud": longitud,
+        "imagen": uploaded_file.name,
     }
 
     # Guardar el diccionario en un archivo JSON
