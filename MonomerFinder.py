@@ -193,17 +193,13 @@ if st.button("Analizar imagen"):
     'data_column': [1, 2],
     'microplastic_type': ['Blanco', 'Rojo']
     })
-    st.write(df)
-
-# Crear el histograma usando Matplotlib
-fig, ax = plt.subplots()
-ax.hist(df['data_column'], bins=10, color='skyblue', edgecolor='black')
-ax.set_title('Histograma de data_column')
-ax.set_xlabel('Valores')
-ax.set_ylabel('Frecuencia')
-
-# Mostrar el histograma en Streamlit
-st.pyplot(fig)
+    
+    # Mostrar los resultados en un gráfico de barras
+    fig, ax = plt.subplots()
+    ax.bar(df['data_column'], df['microplastic_type'])
+    ax.set_xlabel('Cantidad de microplásticos')
+    ax.set_ylabel('Tipo de microplástico')
+    st.pyplot(fig)
 
 
 
