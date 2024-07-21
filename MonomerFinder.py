@@ -4,7 +4,6 @@ import csv
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-import json
 
 # Cargar la imagen del banner
 banner_image = Image.open("Microplastics_in_the_natural_environment.jpg")
@@ -101,7 +100,7 @@ with st.expander("Objetivos del proyecto"):
     st.markdown("</div>", unsafe_allow_html=True)
 
 # Software de MonomerFinder
-st.write("""
+st.markdown("""
 <style>
 .centered {
     text-align: center;
@@ -111,10 +110,16 @@ st.write("""
     <h1>¡Vamos a identificar y contar microplásticos!</h1>
 </div>
 """, unsafe_allow_html=True)
-st.write("Recuerda:")
-st.write("1-.Tener a la mano tu ubicación")
-st.write("2-.La fotos deben ser de microplásticos filtrados es decir sin ningún otro material en lo posible")
-st.write("3-.Las fotos deben ser claras para obtener mejores resultados")
+
+st.markdown("""
+Este es un ejemplo de cómo se verá la aplicación MonomerFinder. A continuación, se presentan las instrucciones para subir una imagen y obtener los resultados del análisis:
+<ol>
+    <li>Ten a la mano tu ubicación.</li>
+    <li>Las fotos deben ser de microplásticos filtrados, es decir, sin ningún otro material en lo posible.</li>
+    <li>Las fotos deben ser claras para obtener mejores resultados.</li>
+</ol>
+""", unsafe_allow_html=True)
+
 
 # Solicitar al usuario que ingrese una imagen
 st.markdown("""
@@ -167,16 +172,6 @@ col1, col2, col3 = st.columns([1, 1, 1])
 with col2:
     if st.button("Analizar imagen"):
         if uploaded_file is not None:
-            # Crear el diccionario con los datos de la imagen
-            data_to_save = {
-                "latitud": latitud,
-                "longitud": longitud,
-                "imagen": uploaded_file.name,
-            }
-            # Guardar el diccionario en un archivo JSON
-            with open("data.json", "w") as json_file:
-                json.dump(data_to_save, json_file)
-
             # Mostrar mensaje de éxito
             st.success("¡La imagen ha sido analizada con éxito!")
 
@@ -193,13 +188,9 @@ if uploaded_file is not None:
             <h2>Resultados del análisis</h2>
         </div>
         """, unsafe_allow_html=True)
-    
-    # Cargar los resultados desde el archivo JSON
-    with open("resultados_analisis.json", "r") as json_file:
-        resultados_cargados = json.load(json_file)
 
     # Mostrar los resultados
-    st.write(resultados_cargados)
+    
 
 
 # Protocolo de estimación de microplásticos en la arena
