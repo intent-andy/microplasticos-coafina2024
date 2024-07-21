@@ -7,9 +7,8 @@ import pandas as pd
 
 # Cargar y mostrar la imagen del banner
 banner_image = Image.open("Microplastics_in_the_natural_environment.jpg")
-st.image(banner_image, use_column_width=True)
-
-# El resto del código permanece igual...
+banner_image_rotated = banner_image.rotate(90, expand=True)
+st.image(banner_image_rotated, use_column_width=True)
 
 # Definir el estilo CSS para el color de fondo
 color_reto = "#FFD700"  # Amarillo
