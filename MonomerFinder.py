@@ -108,3 +108,9 @@ def solicitar_datos():
       </div>
       """, unsafe_allow_html=True)
   st.map(pd.DataFrame({'lat': [latitud], 'lon': [longitud], 'name': [descripcion], 'country': [pais], 'zoom': [1]}))
+
+# Solicitar los datos
+ubicacion_data = []
+entrada = solicitar_datos()
+if entrada:
+    ubicacion_data.append(entrada)
