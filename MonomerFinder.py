@@ -235,3 +235,6 @@ st.write("3. Se tomarán muestras de arena a 5 cm de profundidad con una cuchara
 col1, col2, col3 = st.columns([1, 1, 1])
 with col2:
     st.image("Muestreo.png", use_column_width=True)
+
+st.write("4. Para lograr hacer esta estimación se sugiere hacer un convenio con laboratorios de universidades o ONGs para realizar el análisis de las muestras.")
+st.write("5. Esta iniciativa puede ser realizada por grupos de voluntarios locales o no, con interés en la conservación de las playas y la vida marina.")
