@@ -228,3 +228,19 @@ if st.button("Analizar imagen"):
     # Mostrar los resultados en una tabla
     st.write("A continuación se presenta una tabla con los resultados obtenidos:")
     st.table(df)
+
+# Algunas consideraciones finales
+
+st.markdown("""
+    <style>
+    .center {
+        display: flex;
+        justify-content: center;
+    }
+    </style>
+    <div class="center">
+        <h2>Consideraciones finales</h2>
+    </div>
+    """, unsafe_allow_html=True)
+
+st.write("¡Gracias por utilizar MonomerFinder! Este es un ejemplo de cómo se verá la aplicación en la versión final, y puedes revisar todo el desarrollo en el siguiente enlace: [MonomerFinder](https://github.com/intent-andy/microplasticos-coafina2024). Esta aplicación permitirá a los usuarios identificar y hacer un conteo de los microplásticos presentes en las playas y se podrán obtener los resultados en un archivo CSV para su posterior análisis. El siguiente paso es la implementación de una base de datos abierta para almacenar los resultados de los análisis y así contribuir con el desarrollo de nuevos estudios y análisis sobre los microplásticos en las playas del mundo.")
