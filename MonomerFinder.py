@@ -15,9 +15,7 @@ banner_image_rotated = banner_image.rotate(90, expand=True)
 st.image(banner_image_rotated, use_column_width=True)
 
 # Definir el estilo CSS para el color de fondo
-color_reto = "#FFD700"  # Amarillo
-color_defi = "#ADD8E6"  # Azul claro
-color_ries_con = "#90EE90"  # Verde claro
+color_page = "#756AB6"
 
 st.markdown("""
 <style>
@@ -36,14 +34,14 @@ col1, col2 = st.columns([1, 1])
 with col1:
     # Menú desplegable para "¿Qué es MonomerFinder?"
     with st.expander("¿Qué es MonomerFinder?"):
-        st.markdown(f"<div style='background-color:{color_reto}; padding: 5px; border-radius: 5px;'>", unsafe_allow_html=True)
+        st.markdown(f"<div style='background-color:{color_page}; padding: 5px; border-radius: 5px;'>", unsafe_allow_html=True)
         st.write("MonomerFinder es una aplicación que facilita la identificación y clasificación de microplásticos presentes en imágenes capturadas por los propios usuarios. Para esto utiliza una IA que se encarga de analizar las imágenes y señalar la cantidad de microplásticos presentes y su tipo. Esta aplicación es el resultado del Reto 5 del Hackaton Coafina 2024: 'Microplásticos: un desafío ciudadano'.")
         st.image("RaceforWater_PeterCharaf_MicroplasticsAzores_(2).jpg", use_column_width=True)
         st.markdown("</div>", unsafe_allow_html=True)
 
     # Menú desplegable adicional para "Fuentes de microplásticos"
     with st.expander("Fuentes de microplásticos"):
-        st.markdown(f"<div style='background-color:{color_ries_con}; padding: 5px; border-radius: 5px;'>", unsafe_allow_html=True)
+        st.markdown(f"<div style='background-color:{color_page}; padding: 5px; border-radius: 5px;'>", unsafe_allow_html=True)
         st.write("Los microplásticos pueden provenir de diversas fuentes, entre las que se destacan:")
         st.write("- Textiles:  El 70% de los textiles producidos hoy en día son de origen sintético y liberan grandes cantidades de microplásticos al medio ambiente. La liberación de fibras y sustancias sintéticas de la ropa se produce no solo a través del lavado y el uso, sino también durante la producción, el procesamiento y el transporte. Los geotextiles, que se utilizan comúnmente para sostener y reforzar las capas del suelo o como manto agrícola, también liberan microplásticos debido a la exposición a los rayos UV, daños físicos y un mantenimiento deficiente.")
         st.write("- Cosméticos y productos de cuidado personal: Un gran número de productos de cuidado personal todavía contienen microplásticos añadidos intencionadamente (por ejemplo, escarcha, microperlas en exfoliantes faciales y corporales). Estos productos ingresan al sistema de alcantarillado y a las plantas de tratamiento de aguas residuales. Aquí no se eliminan por completo y, por lo tanto, ingresan al medio ambiente.")
@@ -58,10 +56,26 @@ with col1:
 with col2:
     # Menú desplegable para "¿Qué son los microplásticos?"
     with st.expander("¿Qué son los microplásticos?"):
-        st.markdown(f"<div style='background-color:{color_defi}; padding: 5px; border-radius: 5px;'>", unsafe_allow_html=True)
+        st.markdown(f"<div style='background-color:{color_page}; padding: 5px; border-radius: 5px;'>", unsafe_allow_html=True)
         st.write("Los microplásticos son diminutas partículas de plástico, generalmente con tamaños menores a 5 mm, que se han convertido en un problema ambiental global. Provienen de diversas fuentes, como la degradación de objetos plásticos más grandes, productos cosméticos y fibras sintéticas de la ropa. Estos diminutos fragmentos contaminan océanos, ríos, suelos e incluso el aire, siendo ingeridos por organismos marinos y terrestres, lo que puede llevar a su acumulación en la cadena alimentaria. Su persistencia en el medio ambiente y sus potenciales efectos negativos en la salud humana y de los ecosistemas son motivo de creciente preocupación entre científicos y ambientalistas.")
         st.image("Microplastic.jpg", use_column_width=True)
-        st.markdown("</div>", unsafe_allow_html=True)    
+        st.markdown("</div>", unsafe_allow_html=True)
+
+    # Menú desplegable para "Componentes tóxicos presentes en los plásticos"
+    with st.expander("Componentes tóxicos presentes en los plásticos"):
+        st.markdown(f"<div style='background-color:{color_page}; padding: 5px; border-radius: 5px;'>", unsafe_allow_html=True)
+        st.write("- Polibutileno tereftalato (PBT): Es un polímero termoplástico lineal que se fabrica para fines específicos, incluso para su uso en productos de cuidado personal (como exfoliantes, productos de baño, limpiadores faciales, pastas dentales). También se pueden utilizar en otros usos de consumo, incluidos productos de limpieza y tóneres de impresoras, y en productos industriales como medios abrasivos (por ejemplo, chorreado de plástico), industria (por ejemplo, exploración de petróleo y gas, impresión textil y moldeo automotriz), otros productos plásticos (aplicaciones antideslizantes) y aplicaciones médicas.")
+        st.write("Es probable que los productos que contienen PBT y se tiran por el desagüe se liberen en el medio acuático después del tratamiento de las aguas residuales. Los estudios han demostrado que los microplásticos, Incluido el PBT, están presentes en el medio ambiente y que pueden residir en el medio ambiente durante mucho tiempo. Se ha demostrado que el PBT provoca efectos a corto y largo plazo en organismos de laboratorio, y además este compuesto es capaz de absorber contaminantes del medio ambiente y liberarlos en el organismo que consuma o absorba el microplástico.")
+        st.write("El PBT es fácilmente absorbido por una variedad de organismos, incluidos peces, mejillones y varios tipos de zooplancton, los posibles efectos negativos de la absorción o ingesta de estos compuestos por parte de animales afectan al hígado por el agotamiento del glucógeno y la vacuolización de grasas, se encontró una regulación negativa significativa de la expresión génica de la coriogenina en los machos y una regulación negativa significativa de la vitelogenina, la coriogenina y el receptor de estrógeno alfa en las hembras.")
+        st.write("- El bisfenol A (BPA): es una sustancia química sintética que se utiliza como monómero para producir ciertos plásticos de policarbonato y resinas epoxi.")
+        st.write("Los plásticos de policarbonato y las resinas epoxi se utilizan ampliamente en productos de consumo. Algunos ejemplos son los envases de alimentos y bebidas, los equipos deportivos y de seguridad, la electrónica, las piezas de automóviles y los dispositivos médicos. El BPA también se utiliza en papel térmico recubrimientos para recibos, etiquetas de recetas y billetes de avión.")
+        st.write("El BPA se absorbe con facilidad y se metaboliza ampliamente en el organismo. Este compuesto y sus metabolitos se miden habitualmente en orina como BPA total. Estas mediciones reflejan la exposición reciente al compuesto.")
+        st.write("Los riesgos potenciales para la salud humana derivados de la exposición al BPA incluyen efectos sobre el hígado y los riñones. También incluyen efectos potenciales sobre la reproducción, el desarrollo, el neurodesarrollo y el comportamiento.")
+        st.write("- Los ftalatos: También conocidos como ésteres de ácido ftálico, son un conjunto de más de 80 compuestos químicos sintéticos utilizados en numerosas industrias como plastificadores, y cuya función principal es la de dar mayor flexibilidad y elasticidad a los polímeros rígidos.")
+        st.write("Los estudios con animales han demostrado que la exposición al DEHP puede tener efectos sobre el desarrollo y la reproducción. También puede afectar al hígado y los riñones. El Centro Internacional de Investigaciones sobre el cáncer ha clasificado el DEHP como posiblemente cancerígeno para los seres humanos.")
+        st.write("Están presentes en productos de cuidado personal como cosméticos, también en productos de construcción y renovación como lubricantes y grasas, pinturas, revestimientos, adhesivos, selladores, textiles. Puede encontrarse en artículos eléctricos y electrónicos, también en juguetes y en algunos materiales de envasado de alimentos y plásticos de tipo PVC.")
+        st.write("- Los éteres difenílicos polibromados (PBDE): son sustancias producidas comercialmente que se utilizan como retardantes de llama para frenar la ignición y propagación del fuego en una amplia variedad de productos de consumo como las bases de alfombras, espuma para muebles, electrodomésticos y los equipos eléctricos y electrónicos. Los PBDE pueden encontrarse en el medio ambiente en todo el mundo. Los efectos críticos o importantes considerados en la evaluación de la salud humana eran efectos sobre el desarrollo neurológico (como cambios en el movimiento y el comportamiento).")
+    
 
 # Software de MonomerFinder
 st.write("""
