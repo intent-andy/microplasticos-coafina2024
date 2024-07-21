@@ -60,8 +60,6 @@ with col1:
         st.write("- Procesamiento de plásticos: Los pellets son perlas de plástico nuevas o recicladas que se utilizan como materia prima en la fabricación de la mayoría de los productos plásticos. Sin embargo, las pérdidas de gránulos, escamas y polvo de plástico se producen a lo largo de toda la cadena de valor de la producción, el transporte y el reciclaje de plástico. Además, el agua del proceso y las aguas residuales de la industria del plástico pueden estar muy contaminadas con microplásticos.")
         st.write("- Turismo: La eliminación inadecuada de los residuos de los turistas, los sistemas locales de gestión de residuos deficientes o inexistentes, la descarga incontrolada de aguas residuales de los cruceros y el consumo masivo de productos y envases de plástico de un solo uso en los países impulsados por el turismo, aumentan los aportes de microplásticos.")
         st.markdown("</div>", unsafe_allow_html=True)
-
-with col2:
     
 
 # Software de MonomerFinder
