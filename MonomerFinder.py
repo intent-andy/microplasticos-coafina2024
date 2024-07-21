@@ -193,8 +193,13 @@ if uploaded_file is not None:
             <h2>Resultados del análisis</h2>
         </div>
         """, unsafe_allow_html=True)
-    # Mostrar los resultados del análisis
+    
+    # Cargar los resultados desde el archivo JSON
+    with open("resultados_analisis.json", "r") as json_file:
+        resultados_cargados = json.load(json_file)
 
+    # Mostrar los resultados
+    st.write(resultados_cargados)
 
 
 # Protocolo de estimación de microplásticos en la arena
