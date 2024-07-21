@@ -71,7 +71,7 @@ with col2:
         st.write("- Los éteres difenílicos polibromados (PBDE): son sustancias producidas comercialmente que se utilizan como retardantes de llama para frenar la ignición y propagación del fuego en una amplia variedad de productos de consumo como las bases de alfombras, espuma para muebles, electrodomésticos y los equipos eléctricos y electrónicos. Los PBDE pueden encontrarse en el medio ambiente en todo el mundo. Los efectos críticos o importantes considerados en la evaluación de la salud humana eran efectos sobre el desarrollo neurológico (como cambios en el movimiento y el comportamiento).")
         st.markdown("</div>", unsafe_allow_html=True)
 
-# Menú desplegable para "Relevancia del proyecto"
+# Menú desplegable para "Objetivos del proyecto"
 with st.expander("Objetivos del proyecto"):
     st.markdown(f"<div style='background-color:{color_page}; padding: 5px; border-radius: 5px;'>", unsafe_allow_html=True)
     st.write("- Proporcionar una herramienta de uso libre para incentivar la colaboración ciudadana en la identificación de los microplásticos presentes en las playas del mundo.")
@@ -92,10 +92,10 @@ with st.expander("Objetivos del proyecto"):
     # Imágenes de los retos de la Década Oceánica
     col1, col2 = st.columns([1, 1])
     with col1:
-        st.image("Understand-and-beat-marine-pollution.webp", use_column_width=True)
+        st.image("Understand-and-beat-marine-pollution.jpg", use_column_width=True)
 
     with col2:
-        st.image("Skills-knowledge-and-tecnology-for-all.webp", use_column_width=True)  
+        st.image("Skills-knowledge-and-tecnology-for-all.jpg", use_column_width=True)  
     st.markdown("</div>", unsafe_allow_html=True)
 
 # Software de MonomerFinder
