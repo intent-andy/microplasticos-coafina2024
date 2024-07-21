@@ -120,20 +120,21 @@ Este es un ejemplo de cómo se verá la aplicación MonomerFinder. A continuaci�
 </ol>
 """, unsafe_allow_html=True)
 
-
-# Solicitar al usuario que ingrese una imagen
-st.markdown("""
-    <style>
-    .center {
-        display: flex;
-        justify-content: center;
-    }
-    </style>
-    <div class="center">
-        <h2>Sube tu imagen</h2>
-    </div>
-    """, unsafe_allow_html=True)
-uploaded_file = st.file_uploader(" ", type=["jpg", "jpeg", "png"])
+# Botón para comenzar
+if st.button("Comenzar"):
+    # Solicitar al usuario que ingrese una imagen
+    st.markdown("""
+        <style>
+        .center {
+            display: flex;
+            justify-content: center;
+        }
+        </style>
+        <div class="center">
+            <h2>Sube tu imagen</h2>
+        </div>
+        """, unsafe_allow_html=True)
+    uploaded_file = st.file_uploader(" ", type=["jpg", "jpeg", "png"])
 
 # Ubicación en el mapa
 st.markdown("""
