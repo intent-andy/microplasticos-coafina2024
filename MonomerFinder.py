@@ -116,7 +116,7 @@ st.write("1-.Tener a la mano tu ubicación")
 st.write("2-.La fotos deben ser de microplásticos filtrados es decir sin ningún otro material en lo posible")
 st.write("3-.Las fotos deben ser claras para obtener mejores resultados")
 
-# Solicitar al usuario que ingrese el nombre del archivo de imagen
+# Solicitar al usuario que ingrese una imagen
 st.markdown("""
     <style>
     .center {
@@ -182,12 +182,12 @@ st.markdown("""
     """, unsafe_allow_html=True)
 
 # Recolectar datos del usuario
-user_location = "Ejemplo de ubicación"  # Este valor debería ser obtenido dinámicamente
 if uploaded_file is not None:
     # Guardar la ubicación y el nombre del archivo en un diccionario
     data_to_save = {
-        "location": user_location,
-        "filename": uploaded_file.name
+        "latitud": ubicacion_data[0],
+        "longitud": ubicacion_data[1],
+        "imagen": uploaded_file.name
     }
 
     # Guardar el diccionario en un archivo JSON
