@@ -136,7 +136,8 @@ st.write("En este ejemplo se ha cargado una imagen de microplásticos filtrados 
 if st.button("Subir archivo"):
     uploaded_file = "d--52-_jpg.rf.086e80a05c54229e7189ec3bc38c9940.jpg"
     image = Image.open(uploaded_file)
-    st.image(image, caption="Imagen cargada", use_column_width=True)
+    st.image(image, use_column_width=True)
+    st.success("¡La imagen ha sido cargada con éxito!")
 
 
 # Ubicación en el mapa
