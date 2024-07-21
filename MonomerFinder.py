@@ -92,10 +92,10 @@ with st.expander("Objetivos del proyecto"):
     # Imágenes de los retos de la Década Oceánica
     col1, col2, col3, col4, col5 = st.columns([1, 3, 1, 3, 1])
     with col2:
-        st.image("Understand-and-beat-marine-pollution.webp", use_column_width=True)
+        st.image("Understand-and-beat-marine-pollution.webp", caption="Desafío 1: Comprender y vencer la contaminación marina", use_column_width=True)
 
     with col4:
-        st.image("Skills-knowledge-and-technology-for-all.webp", use_column_width=True)  
+        st.image("Skills-knowledge-and-technology-for-all.webp", caption="Desafío 9: Habilidades, conocimientos y tecnología para todos", use_column_width=True)
     
     st.markdown("</div>", unsafe_allow_html=True)
 
