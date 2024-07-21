@@ -142,6 +142,8 @@ if st.button("Comenzar"):
         st.image("d--52-_jpg.rf.086e80a05c54229e7189ec3bc38c9940.jpg", use_column_width=True)
         if st.button("Seleccionar archivo"):
             st.success("¡Imagen cargada con éxito!")
+    st.markdown("</div>", unsafe_allow_html=True)
+    
     
     
 
