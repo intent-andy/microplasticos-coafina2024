@@ -3,6 +3,7 @@ from PIL import Image
 import csv
 import matplotlib.pyplot as plt
 import numpy as np
+import pandas as pd
 
 # Definir el estilo CSS para el color de fondo
 color_reto = "#FFD700"  # Amarillo
@@ -92,6 +93,7 @@ latitud = st.number_input('Latitud', value=0.0, format="%.6f")
 longitud = st.number_input('Longitud', value=0.0, format="%.6f")
 descripcion = st.text_input('Descripción de la ubicación (opcional)')
 pais = st.text_input('País')
+
 import folium
 import streamlit as st
 
