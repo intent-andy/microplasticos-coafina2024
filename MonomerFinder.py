@@ -95,15 +95,11 @@ descripcion = st.text_input('Descripción de la ubicación (opcional)')
 pais = st.text_input('País')
 
 import folium
-import streamlit as st
+from streamlit_folium import folium_static
 
-from streamlit_folium import st_folium
+# Crear un objeto de mapa con Folium
+# Aquí se utiliza una ubicación central (latitud y longitud) y un nivel de zoom inicial
+mapa = folium.Map(location=[40.416775, -3.703790], zoom_start=10)
 
-# center on Liberty Bell, add marker
-m = folium.Map(location=[39.949610, -75.150282], zoom_start=16)
-folium.Marker(
-    [39.949610, -75.150282], popup="Liberty Bell", tooltip="Liberty Bell"
-).add_to(m)
-
-# call to render Folium map in Streamlit
-st_data = st_folium(m, width=725)
+# Mostrar el mapa en la aplicación Streamlit
+folium_static(mapa)
