@@ -202,6 +202,7 @@ if st.button("Analizar imagen"):
     df = pd.DataFrame(Resultados)
 
     # Mostrar los resultados en un gráfico de barras
+    st.write("A continuación se presenta un gráfico de barras con los resultados obtenidos:")
     fig, ax = plt.subplots()
     ax.bar(df['Color'], df['Conteo'])
     ax.set_xlabel('Cantidad de microplásticos')
