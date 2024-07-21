@@ -148,14 +148,14 @@ if entrada:
     ubicacion_data.append(entrada)
 
 # Protocolo de estimación de microplásticos en la arena
+
 st.markdown("""
     <style>
-    .center {
-        display: flex;
-        justify-content: center;
+    .centered {
+        text-align: center;
     }
     </style>
-    <div class="center">
+    <div class="centered">
         <h2>Protocolo de estimación de microplásticos en la arena</h2>
     </div>
     """, unsafe_allow_html=True)
