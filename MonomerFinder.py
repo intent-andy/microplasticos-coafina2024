@@ -4,6 +4,15 @@ import csv
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
+from geopy.geocoders import Nominatim
+
+geolocator = Nominatim(user_agent="geoapiExercises")
+
+def obtener_pais(lat, lon):
+    location = geolocator.reverse((lat, lon), exactly_one=True)
+    if location:
+        return location.raw.get('address', {}).get('country', 'Desconocido')
+    return 'Desconocido'
 
 # Definir el estilo CSS para el color de fondo
 color_reto = "#FFD700"  # Amarillo
@@ -76,7 +85,7 @@ st.markdown("""
     """, unsafe_allow_html=True)
 uploaded_file = st.file_uploader(" ", type=["jpg", "jpeg", "png"])
 
-# Solicitar ubicación
+# Ubicación en el mapa
 st.markdown("""
     <style>
     .center {
@@ -92,7 +101,9 @@ st.markdown("""
 latitud = st.number_input('Latitud', value=0.0, format="%.6f")
 longitud = st.number_input('Longitud', value=0.0, format="%.6f")
 descripcion = st.text_input('Descripción de la ubicación (opcional)')
-pais = st.text_input('País')
+pais = obtener_pais(latitud, longitud)
+
+
 
 # Ubicación en el mapa
 st.markdown("""
