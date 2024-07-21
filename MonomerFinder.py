@@ -72,11 +72,21 @@ with col2:
         st.markdown("</div>", unsafe_allow_html=True)
 
 # Menú desplegable para "Relevancia del proyecto"
-with st.expander("Relevancia del proyecto"):
+with st.expander("Objetivos del proyecto"):
     st.markdown(f"<div style='background-color:{color_page}; padding: 5px; border-radius: 5px;'>", unsafe_allow_html=True)
-    st.write("La contaminación por microplásticos es un problema ambiental global que afecta a los ecosistemas acuáticos y terrestres, así como a la salud humana. La identificación y cuantificación de los microplásticos presentes en el medio ambiente es un paso fundamental para abordar este problema. MonomerFinder es una herramienta que permite a los ciudadanos contribuir a la identificación de microplásticos en su entorno, facilitando la generación de datos sobre la presencia y distribución de estos contaminantes. Al involucrar a la comunidad en la detección de microplásticos, se promueve la conciencia ambiental y se fomenta la participación ciudadana en la protección de los ecosistemas y la salud humana.")
-    st.write("Este proyecto se enmarca en los Objetivos de Desarrollo Sostenible (ODS) de la Agenda 2030 de las Naciones Unidas, en particular en los ODS 6 (Agua limpia y saneamiento), 14 (Vida submarina) y 17 (Alianzas para lograr los objetivos) ya que contribuye al saneamiento de los ecosistemas acuáticos, la protección de la vida marina y la promoción de la colaboración entre diferentes actores para abordar los desafíos ambientales.")
-    st.write("Además, se alinea con los objetivos de la Década Oceánica, abarcando los desafíos 1 (Comprender y vencer la contaminación marina) y 9 (Habilidades, conocimientos y tecnologías para todos).")
+    st.write("- Proporcionar una herramienta de uso libre para incentivar la colaboración ciudadana en la identificación de los microplásticos presentes en las playas del mundo.")
+    st.write("- Difundir conocimientos y recomendaciones de acción a los usuarios de esta herramienta basándose en los resultados obtenidos de la identificación.")
+    st.write("- Sentar las bases para la creación de una base de datos abiertos y así aportar al desarrollo de nuevos estudios y análisis siguiendo los Objetivos de Desarrollo Sostenible de la ONU.")
+    col1, col2, col3 = st.columns([1, 1, 1])
+    with col1:
+        st.image("S_SDG_Icons-01-06.jpg", use_column_width=True)
+    
+    with col2:
+        st.image("S_SDG_Icons-01-14.jpg", use_column_width=True)
+
+    with col3:
+        st.image("S_SDG_Icons-01-17.jpg", use_column_width=True)
+        
     st.markdown("</div>", unsafe_allow_html=True)
 
 # Software de MonomerFinder
