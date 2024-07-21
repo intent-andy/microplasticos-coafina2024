@@ -219,8 +219,9 @@ st.markdown("""
     """, unsafe_allow_html=True)
 st.write("Haz clic en el botón para descargar los resultados del análisis en un archivo CSV.")
 if st.button("Descargar resultados"):
-    df.to_csv("resultados_analisis.csv", index=False)
+    df.to_csv("resultados.csv", index=False)
     st.success("¡Los resultados han sido descargados con éxito!")
+    
 
 # Protocolo de estimación de microplásticos en la arena
 
