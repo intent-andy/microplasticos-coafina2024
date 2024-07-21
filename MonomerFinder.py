@@ -177,7 +177,7 @@ if st.button("Subir archivo"):
 
     with col2:
         if st.button("Analizar imagen"):
-            if uploaded_file is not None:
+            if uploaded_file is True:
                 # Mostrar mensaje de éxito
                 st.success("¡La imagen ha sido analizada con éxito!")
 
