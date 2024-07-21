@@ -134,18 +134,16 @@ if st.button("Comenzar"):
             <h2>Sube tu imagen</h2>
         </div>
         """, unsafe_allow_html=True)
-    st.write("En este caso se ha subido una imagen de ejemplo, haz clic sobre la imagen para continuar.")
+    st.write("En este caso se ha subido una imagen de ejemplo, haz clic en el botón 'Seleccionar archivo' para continuar.")
     
-    # Placeholder para la imagen/botón
-    placeholder = st.empty()
-
-    # Mostrar la imagen
-    img_button = placeholder.image("Pollution_on_Land.jpg", use_column_width=True)
-
-    # Detectar clics en la imagen
-    if st.button("Haz clic aquí después de hacer clic en la imagen"):
-        placeholder.empty()  # Opcional: eliminar la imagen después del clic
-        st.write("La imagen fue clickeada")
+    # Imagen de ejemplo
+    col1, col2, col3 = st.columns([1, 1, 1])
+    with col2
+        st.image("d--52-_jpg.rf.086e80a05c54229e7189ec3bc38c9940.jpg", use_column_width=True)
+        if st.button("Seleccionar archivo"):
+            st.success("¡Imagen cargada con éxito!")
+    
+    
 
 st.markdown("""
     <style>
