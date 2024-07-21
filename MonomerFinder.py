@@ -162,7 +162,7 @@ st.markdown("""
 st.map(pd.DataFrame({'lat': [latitud], 'lon': [longitud], 'zoom': [1]}))
 
 # Botón para analizar la imagen
-col1, col2, col3 = st.columns([1, 1, 1])
+col1, col2, col3 = st.columns([2, 1, 2])
 
 with col2:
     if st.button("Analizar imagen"):
