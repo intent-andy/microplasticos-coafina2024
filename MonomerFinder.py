@@ -5,11 +5,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
-# Ruta de la imagen dentro de la carpeta 'imagenes'
-ruta_imagen = "images\microplastics\Microplastics_in_the_natural_environment.jpg"
-
 # Cargar y mostrar la imagen del banner
-banner_image = Image.open(ruta_imagen)
+banner_image = Image.open("Microplastics_in_the_natural_environment.jpg")
 st.image(banner_image, use_column_width=True)
 
 # El resto del código permanece igual...
