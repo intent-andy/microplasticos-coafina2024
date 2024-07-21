@@ -136,15 +136,26 @@ if st.button("Comenzar"):
         """, unsafe_allow_html=True)
     st.write("En este caso se ha subido una imagen de ejemplo, haz clic en el botón 'Seleccionar archivo' para continuar.")
     
-    # Imagen de ejemplo
-    col1, col2, col3 = st.columns([1, 1, 1])
-    with col2:
-        st.image("d--52-_jpg.rf.086e80a05c54229e7189ec3bc38c9940.jpg", use_column_width=True)
-        if st.button("Seleccionar archivo"):
-            st.success("¡Imagen cargada con éxito!")
-    st.markdown("</div>", unsafe_allow_html=True)
-    
-    
+    # Seleccionar una imagen
+    st.image("P061337-98078.jpg, use_column_width=True")
+    if st.button("Seleccionar archivo"):
+        st.write("¡Imagen seleccionada!")
+        # Mostrar los resultados
+        st.markdown("""
+            <style>
+            .center {
+                display: flex;
+                justify-content: center;
+            }
+            </style>
+            <div class="center">
+                <h2>Resultados</h2>
+            </div>
+            """, unsafe_allow_html=True)
+        st.write("Número de microplásticos encontrados: 5")
+        st.write("Tipo de microplásticos encontrados: Polibutileno tereftalato (PBT)")
+        st.write("Ubicación: 19.4326° N, 99.1332° W")
+        st.write("Descripción de la ubicación: Ciudad de México")
     
 
 st.markdown("""
