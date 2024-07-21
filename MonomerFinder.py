@@ -180,8 +180,21 @@ with col2:
             # Mostrar mensaje de éxito
             st.success("¡La imagen ha sido analizada con éxito!")
 
-            # Resultados del análisis
-            st.write("Resultados del análisis:")
+# Resultados del análisis
+st.markdown("""
+    <style>
+    .center {
+        display: flex;
+        justify-content: center;
+    }
+    </style>
+    <div class="center">
+        <h2>Resultados del análisis</h2>
+    </div>
+    """, unsafe_allow_html=True)
+# Mostrar los resultados del análisis
+
+
 
 # Protocolo de estimación de microplásticos en la arena
 
