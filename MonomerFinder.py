@@ -161,6 +161,26 @@ st.markdown("""
     """, unsafe_allow_html=True)
 st.map(pd.DataFrame({'lat': [latitud], 'lon': [longitud], 'zoom': [1]}))
 
+# Botón para analizar la imagen
+
+if st.button("Analizar imagen"):
+    if uploaded_file is not None:
+        # Crear el diccionario con los datos de la imagen
+        data_to_save = {
+            "latitud": latitud,
+            "longitud": longitud,
+            "imagen": uploaded_file.name,
+        }
+        # Guardar el diccionario en un archivo JSON
+        with open("data.json", "w") as json_file:
+            json.dump(data_to_save, json_file)
+
+        # Mostrar mensaje de éxito
+        st.success("¡La imagen ha sido analizada con éxito!")
+
+        # Resultados del análisis
+        st.write("Resultados del análisis:")
+
 # Protocolo de estimación de microplásticos en la arena
 
 st.markdown("""
@@ -173,16 +193,3 @@ st.markdown("""
         <h2>Protocolo de estimación de microplásticos en la arena</h2>
     </div>
     """, unsafe_allow_html=True)
-
-# Recolectar datos del usuario
-if uploaded_file is not None:
-    # Guardar la ubicación y el nombre del archivo en un diccionario
-    data_to_save = {
-        "latitud": latitud,
-        "longitud": longitud,
-        "imagen": uploaded_file.name,
-    }
-
-    # Guardar el diccionario en un archivo JSON
-    with open("data.json", "w") as json_file:
-        json.dump(data_to_save, json_file)
