@@ -189,11 +189,14 @@ if st.button("Analizar imagen"):
         </div>
         """, unsafe_allow_html=True)
     st.write("Una vez procesada la imagen con el modelo de IA, se obtuvieron los siguientes resultados:")
-    df = pd.DataFrame({
+    
+    Resultados = {
     'Conteo': [1, 2],
     'Color': ['Blanco', 'Rojo']
-    })
+    }
     
+    df = pd.DataFrame(Resultados)
+
     # Mostrar los resultados en un gráfico de barras
     fig, ax = plt.subplots()
     ax.bar(df['Color'], df['Conteo'])
@@ -219,9 +222,9 @@ st.markdown("""
     """, unsafe_allow_html=True)
 st.write("Haz clic en el botón para descargar los resultados del análisis en un archivo CSV.")
 if st.button("Descargar resultados"):
-    df.to_csv("resultados.csv", index=False)
-    st.success("¡Los resultados han sido descargados con éxito!")
+    df.to_csv('Resultados.csv', index=False)
 
+    
 # Protocolo de estimación de microplásticos en la arena
 
 st.markdown("""
