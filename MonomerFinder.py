@@ -190,13 +190,13 @@ if st.button("Analizar imagen"):
         """, unsafe_allow_html=True)
     st.write("Una vez procesada la imagen con el modelo de IA, se obtuvieron los siguientes resultados:")
     df = pd.DataFrame({
-    'data_column': [1, 2],
-    'microplastic_type': ['Blanco', 'Rojo']
+    'Conteo': [1, 2],
+    'Color': ['Blanco', 'Rojo']
     })
     
     # Mostrar los resultados en un gráfico de barras
     fig, ax = plt.subplots()
-    ax.bar(df['microplastic_type'], df['data_column'])
+    ax.bar(df['Color'], df['Conteo'])
     ax.set_xlabel('Cantidad de microplásticos')
     ax.set_ylabel('Tipo de microplástico')
     st.pyplot(fig)
