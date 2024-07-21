@@ -177,16 +177,8 @@ col1, col2, col3 = st.columns([1, 1, 1])
 
 with col2:
     if st.button("Analizar imagen"):
-        if uploaded_file is True:
-            # Mostrar mensaje de éxito
-            st.success("¡La imagen ha sido analizada con éxito!")
-            # Mostrar los resultados del análisis
-            st.write("Resultados del análisis:")
-            st.write("- Cantidad de microplásticos: 5")
-            st.write("- Tipo de microplásticos: Fragmentos")
-            st.write("- Ubicación: Galápagos")
-            st.write("- Latitud: -0.828698914155737")
-            st.write("- Longitud: -90.82966201810576")
+        st.success("¡La imagen ha sido analizada con éxito!")
+        
 
 
 # Protocolo de estimación de microplásticos en la arena
