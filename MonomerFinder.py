@@ -145,7 +145,8 @@ if st.button("Comenzar"):
         if st.button("Seleccionar archivo"):
             st.write("¡Archivo seleccionado!")
 
-        
+# Solicitar los datos de ubicación
+if st.button("Seleccionar archivo"):
     st.markdown("""
         <style>
         .center {
