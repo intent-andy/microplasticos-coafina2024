@@ -201,7 +201,9 @@ if st.button("Analizar imagen"):
     ax.set_ylabel('Tipo de microplástico')
     st.pyplot(fig)
 
-
+    # Mostrar los resultados en una tabla
+    st.write("A continuación se presenta una tabla con los resultados obtenidos:")
+    st.table(df)
 
 # Protocolo de estimación de microplásticos en la arena
 
