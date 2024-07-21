@@ -94,12 +94,3 @@ longitud = st.number_input('Longitud', value=0.0, format="%.6f")
 descripcion = st.text_input('Descripción de la ubicación (opcional)')
 pais = st.text_input('País')
 
-import folium
-from streamlit_folium import st_folium
-
-# Crear un objeto de mapa con Folium
-# Aquí se utiliza una ubicación central (latitud y longitud) y un nivel de zoom inicial
-mapa = folium.Map(location=[40.416775, -3.703790], zoom_start=10)
-
-# Mostrar el mapa en la aplicación Streamlit
-st_folium(mapa)
