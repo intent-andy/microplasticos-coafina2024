@@ -208,17 +208,6 @@ if st.button("Analizar imagen"):
     st.write("A continuación se presenta una tabla con los resultados obtenidos:")
     st.table(df)
 
-
-# Protocolo de estimación de microplásticos en la arena
-st.markdown("""
-    <style>
-    .centered {
-        text-align: center;
-    }
-    </style>
-    <div class="centered">
-""")
-
 # Protocolo de estimación de microplásticos en la arena
 
 st.markdown("""
