@@ -134,9 +134,19 @@ if st.button("Comenzar"):
             <h2>Sube tu imagen</h2>
         </div>
         """, unsafe_allow_html=True)
-    uploaded_file = st.file_uploader(" ", type=["jpg", "jpeg", "png"])
+    st.write("En este caso se ha subido una imagen de ejemplo, haz clic sobre la imagen para continuar.")
+    
+    # Placeholder para la imagen/botón
+    placeholder = st.empty()
 
-# Ubicación en el mapa
+    # Mostrar la imagen
+    img_button = placeholder.image("Pollution_on_Land.jpg", use_column_width=True)
+
+    # Detectar clics en la imagen
+    if st.button("Haz clic aquí después de hacer clic en la imagen"):
+        placeholder.empty()  # Opcional: eliminar la imagen después del clic
+        st.write("La imagen fue clickeada")
+
 st.markdown("""
     <style>
     .center {
@@ -167,28 +177,7 @@ st.markdown("""
     """, unsafe_allow_html=True)
 st.map(pd.DataFrame({'lat': [latitud], 'lon': [longitud], 'zoom': [1]}))
 
-# Botón para analizar la imagen
-col1, col2, col3 = st.columns([1, 1, 1])
 
-with col2:
-    if st.button("Analizar imagen"):
-        if uploaded_file is not None:
-            # Mostrar mensaje de éxito
-            st.success("¡La imagen ha sido analizada con éxito!")
-
-# Resultados del análisis
-if uploaded_file is not None:    
-    st.markdown("""
-        <style>
-        .center {
-            display: flex;
-            justify-content: center;
-        }
-        </style>
-        <div class="center">
-            <h2>Resultados del análisis</h2>
-        </div>
-        """, unsafe_allow_html=True)
 
     # Mostrar los resultados
     
