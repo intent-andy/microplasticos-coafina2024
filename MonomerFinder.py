@@ -100,7 +100,7 @@ with st.expander("Objetivos del proyecto"):
     st.markdown("</div>", unsafe_allow_html=True)
 
 # Software de MonomerFinder
-st.write("""
+st.markdown("""
 <style>
 .centered {
     text-align: center;
@@ -110,10 +110,13 @@ st.write("""
     <h1>¡Vamos a identificar y contar microplásticos!</h1>
 </div>
 """, unsafe_allow_html=True)
-st.write("Recuerda:")
-st.write("1-.Tener a la mano tu ubicación")
-st.write("2-.La fotos deben ser de microplásticos filtrados es decir sin ningún otro material en lo posible")
-st.write("3-.Las fotos deben ser claras para obtener mejores resultados")
+
+st.markdown("""
+Estes es un ejemplo de cómo se verá la aplicación MonomerFinder en la versión final. A continuación, se presentan las instrucciones para subir una imagen y obtener los resultados del análisis:
+1. Ten a la mano tu ubicación.
+2. Las fotos deben ser de microplásticos filtrados, es decir, sin ningún otro material en lo posible.
+3. Las fotos deben ser claras para obtener mejores resultados.
+""")
 
 # Solicitar al usuario que ingrese una imagen
 st.markdown("""
@@ -127,7 +130,8 @@ st.markdown("""
         <h2>Sube tu imagen</h2>
     </div>
     """, unsafe_allow_html=True)
-uploaded_file = st.file_uploader(" ", type=["jpg", "jpeg", "png"])
+
+st.write("En este ejemplo se ha cargado una imagen de microplásticos filtrados para su análisis.")
 
 # Ubicación en el mapa
 st.markdown("""
