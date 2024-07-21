@@ -6,7 +6,7 @@ import numpy as np
 import pandas as pd
 
 # Ruta de la imagen dentro de la carpeta 'imagenes'
-ruta_imagen = "Imágenes OpenData\Microplásticos\Microplastics_in_the_natural_environment.jpg"
+ruta_imagen = "images\microplastics\Microplastics_in_the_natural_environment.jpg"
 
 # Cargar y mostrar la imagen del banner
 banner_image = Image.open(ruta_imagen)
