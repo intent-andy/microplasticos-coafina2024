@@ -12,7 +12,7 @@ banner_image = Image.open("Microplastics_in_the_natural_environment.jpg")
 banner_image_rotated = banner_image.rotate(90, expand=True)
 
 # Mostrar la imagen del banner
-st.image(banner_image_rotated, use_column_width=True, height=200)
+st.image(banner_image_rotated, width=700)
 
 
 # Definir el estilo CSS para el color de fondo
