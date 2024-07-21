@@ -106,4 +106,4 @@ st.markdown("""
         <h2>Ubicación en el mapa</h2>
     </div>
     """, unsafe_allow_html=True)
-st.map(pd.DataFrame({'lat': [latitud], 'lon': [longitud], 'name': [descripcion], 'country': [pais], 'zoom': [10]}))
+st.map(pd.DataFrame({'lat': [latitud], 'lon': [longitud], 'name': [descripcion], 'country': [pais], 'zoom': [1]}))
