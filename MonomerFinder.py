@@ -2,8 +2,8 @@ import streamlit as st
 from PIL import Image
 import csv
 import matplotlib.pyplot as plt
-import numpy as np
 import pandas as pd
+from io import StringIO
 
 # Cargar la imagen del banner
 banner_image = Image.open("Microplastics_in_the_natural_environment.jpg")
@@ -221,10 +221,30 @@ st.markdown("""
     </div>
     """, unsafe_allow_html=True)
 st.write("Haz clic en el botón para descargar los resultados del análisis en un archivo CSV.")
-if st.button("Descargar resultados"):
-    df.to_csv('Resultados.csv', index=False)
 
-    
+# Convertir el DataFrame a CSV en memoria
+csv = StringIO()
+df.to_csv(csv, index=False)
+csv.seek(0)
+
+# Crear el botón de descarga
+st.download_button(
+    label="Descargar resultados",
+    data=csv,
+    file_name="Resultados.csv",
+    mime="text/csv",
+)
+
+# Protocolo de estimación de microplásticos en la arena
+st.markdown("""
+    <style>
+    .centered {
+        text-align: center;
+    }
+    </style>
+    <div class="centered">
+""")
+
 # Protocolo de estimación de microplásticos en la arena
 
 st.markdown("""
