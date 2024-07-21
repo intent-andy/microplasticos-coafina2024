@@ -138,7 +138,7 @@ if st.button("Comenzar"):
     
     # Imagen de ejemplo
     col1, col2, col3 = st.columns([1, 1, 1])
-    with col2
+    with col2:
         st.image("d--52-_jpg.rf.086e80a05c54229e7189ec3bc38c9940.jpg", use_column_width=True)
         if st.button("Seleccionar archivo"):
             st.success("¡Imagen cargada con éxito!")
