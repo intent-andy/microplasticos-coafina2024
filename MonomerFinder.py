@@ -96,6 +96,7 @@ with st.expander("Objetivos del proyecto"):
 
     with col2:
         st.image("Skills-knowledge-and-tecnology-for-all.jpg", use_column_width=True)  
+    
     st.markdown("</div>", unsafe_allow_html=True)
 
 # Software de MonomerFinder
