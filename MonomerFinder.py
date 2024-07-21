@@ -224,7 +224,7 @@ st.write("Haz clic en el botón para descargar los resultados del análisis en u
 
 # Convertir el DataFrame a CSV en memoria
 csv = StringIO()
-df.to_csv(csv, index=False)
+df.to_csv(Resultados, index=False)
 csv.seek(0)
 
 # Crear el botón de descarga
