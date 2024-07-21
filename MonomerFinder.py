@@ -174,20 +174,28 @@ if st.button("Subir archivo"):
 
     # Botón para analizar la imagen
     col1, col2, col3 = st.columns([1, 1, 1])
+# Antes de mostrar el botón, verifica si ya se ha presionado antes
+if 'analizado' not in st.session_state:
+    st.session_state.analizado = False  # Inicializa la variable de sesión
 
-    with col2:
-        if st.button("Analizar imagen"):
-            if uploaded_file is True:
-                # Mostrar mensaje de éxito
-                st.success("¡La imagen ha sido analizada con éxito!")
-                # Mostrar los resultados del análisis
-                st.write("Resultados del análisis:")
-                st.write("- Cantidad de microplásticos: 5")
-                st.write("- Tipo de microplásticos: Fragmentos")
-                st.write("- Ubicación: Galápagos")
-                st.write("- Latitud: -0.828698914155737")
-                st.write("- Longitud: -90.82966201810576")
-                st.write("- Fecha: 2022-10-10")
+# Botón para analizar la imagen
+col1, col2, col3 = st.columns([1, 1, 1])
+
+with col2:
+    # Cambia la condición para verificar la variable de sesión además del botón
+    if st.button("Analizar imagen") or st.session_state.analizado:
+        st.session_state.analizado = True  # Actualiza la variable de sesión
+        if uploaded_file is True:
+            # Mostrar mensaje de éxito
+            st.success("¡La imagen ha sido analizada con éxito!")
+            # Mostrar los resultados del análisis
+            st.write("Resultados del análisis:")
+            st.write("- Cantidad de microplásticos: 5")
+            st.write("- Tipo de microplásticos: Fragmentos")
+            st.write("- Ubicación: Galápagos")
+            st.write("- Latitud: -0.828698914155737")
+            st.write("- Longitud: -90.82966201810576")
+            st.write("- Fecha: 2022-10-10")
                 
 
 
