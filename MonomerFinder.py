@@ -38,6 +38,8 @@ with col1:
     with st.expander("¿Qué es MonomerFinder?"):
         st.markdown(f"<div style='background-color:{color_reto}; padding: 5px; border-radius: 5px;'>", unsafe_allow_html=True)
         st.write("MonomerFinder es una aplicación que facilita la identificación y clasificación de microplásticos presentes en imágenes capturadas por los propios usuarios. Para esto utiliza una IA que se encarga de analizar las imágenes y señalar la cantidad de microplásticos presentes y su tipo. Esta aplicación es el resultado del Reto 5 del Hackaton Coafina 2024: 'Microplásticos: un desafío ciudadano'.")
+        # Imagen 1
+        st.image("RaceforWater_PeterCharaf_MicroplasticsAzores_(2).jpg", use_column_width=True)
         st.markdown("</div>", unsafe_allow_html=True)
 
     # Menú desplegable para "¿Qué son los microplásticos?"
@@ -60,8 +62,7 @@ with col1:
         st.markdown("</div>", unsafe_allow_html=True)
 
 with col2:
-    # Imagen 1
-    st.image("RaceforWater_PeterCharaf_MicroplasticsAzores_(2).jpg", use_column_width=True)
+    
 
 # Software de MonomerFinder
 st.write("""
