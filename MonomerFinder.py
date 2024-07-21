@@ -76,7 +76,9 @@ with st.expander("Objetivos del proyecto"):
     st.markdown(f"<div style='background-color:{color_page}; padding: 5px; border-radius: 5px;'>", unsafe_allow_html=True)
     st.write("- Proporcionar una herramienta de uso libre para incentivar la colaboración ciudadana en la identificación de los microplásticos presentes en las playas del mundo.")
     st.write("- Difundir conocimientos y recomendaciones de acción a los usuarios de esta herramienta basándose en los resultados obtenidos de la identificación.")
-    st.write("- Sentar las bases para la creación de una base de datos abiertos y así aportar al desarrollo de nuevos estudios y análisis siguiendo los Objetivos de Desarrollo Sostenible de la ONU.")
+    st.write("- Sentar las bases para la creación de una base de datos abiertos y así aportar al desarrollo de nuevos estudios y análisis siguiendo los Objetivos de Desarrollo Sostenible de la ONU y contribuyendo con los retos 1 y 9 de la Década Oceánica.")
+    
+    # Imágenes de los Objetivos de Desarrollo Sostenible
     col1, col2, col3 = st.columns([1, 1, 1])
     with col1:
         st.image("S_SDG_Icons-01-06.jpg", use_column_width=True)
@@ -86,7 +88,14 @@ with st.expander("Objetivos del proyecto"):
 
     with col3:
         st.image("S_SDG_Icons-01-17.jpg", use_column_width=True)
-        
+
+    # Imágenes de los retos de la Década Oceánica
+    col1, col2 = st.columns([1, 1])
+    with col1:
+        st.image("Understand-and-beat-marine-pollution.webp", use_column_width=True)
+
+    with col2:
+        st.image("Skills-knowledge-and-tecnology-for-all.webp", use_column_width=True)  
     st.markdown("</div>", unsafe_allow_html=True)
 
 # Software de MonomerFinder
