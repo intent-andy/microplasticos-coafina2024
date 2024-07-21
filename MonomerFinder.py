@@ -99,6 +99,22 @@ with st.expander("Objetivos del proyecto"):
     
     st.markdown("</div>", unsafe_allow_html=True)
 
+# Protocolo de estimación de microplásticos en la arena
+
+with st.expander("Protocolo de estimación de microplásticos en la arena"):
+
+    st.write("Para la estimación de microplásticos en la arena, se debe seguir el siguiente protocolo:")
+    st.write("1. El muestreo debe realizarse utilizando ropa de algodón, durante la marea baja y aproximadamente en el medio de la zona intermareal siguiendo una línea paralela a la costa.")
+    st.write("2. Dentro de las capacidades operativas se debe fijar cada 10 m de distancia, siguiendo la línea paralela a la costa, al menos 3 marcos de madera o metal de 50x50 cm, y con subdivisiones hechas con cuerda no sintética de 10 cm por lado.")
+    st.write("3. Se tomarán muestras de arena a 5 cm de profundidad con una cuchara metálica en las 5 subdivisiones de la diagonal del marco, las cuales serán almacenadas en frascos de vidrio con tapa metálica. \n Así, cada muestra, representará un volumen de 0.0005 m3 y servirá para aproximar el contenido de microplásticos para un volumen de 0.0125 m3, que representa el volumen de todo el marco para 5 cm de profundidad.")
+
+    col1, col2, col3 = st.columns([1, 1, 1])
+    with col2:
+        st.image("Muestreo.png", use_column_width=True)
+
+    st.write("4. Para lograr hacer esta estimación se sugiere hacer un convenio con laboratorios de universidades o ONGs para realizar el análisis de las muestras.")
+    st.write("5. Esta iniciativa puede ser realizada por grupos de voluntarios locales o no, con interés en la conservación de las playas y la vida marina.")
+
 # Software de MonomerFinder
 st.markdown("""
 <style>
@@ -212,29 +228,3 @@ if st.button("Analizar imagen"):
     # Mostrar los resultados en una tabla
     st.write("A continuación se presenta una tabla con los resultados obtenidos:")
     st.table(df)
-
-
-# Protocolo de estimación de microplásticos en la arena
-
-st.markdown("""
-    <style>
-    .centered {
-        text-align: center;
-    }
-    </style>
-    <div class="centered">
-        <h2>Protocolo de estimación de microplásticos en la arena</h2>
-    </div>
-    """, unsafe_allow_html=True)
-
-st.write("Para la estimación de microplásticos en la arena, se debe seguir el siguiente protocolo:")
-st.write("1. El muestreo debe realizarse utilizando ropa de algodón, durante la marea baja y aproximadamente en el medio de la zona intermareal siguiendo una línea paralela a la costa.")
-st.write("2. Dentro de las capacidades operativas se debe fijar cada 10 m de distancia, siguiendo la línea paralela a la costa, al menos 3 marcos de madera o metal de 50x50 cm, y con subdivisiones hechas con cuerda no sintética de 10 cm por lado.")
-st.write("3. Se tomarán muestras de arena a 5 cm de profundidad con una cuchara metálica en las 5 subdivisiones de la diagonal del marco, las cuales serán almacenadas en frascos de vidrio con tapa metálica. \n Así, cada muestra, representará un volumen de 0.0005 m3 y servirá para aproximar el contenido de microplásticos para un volumen de 0.0125 m3, que representa el volumen de todo el marco para 5 cm de profundidad.")
-
-col1, col2, col3 = st.columns([1, 1, 1])
-with col2:
-    st.image("Muestreo.png", use_column_width=True)
-
-st.write("4. Para lograr hacer esta estimación se sugiere hacer un convenio con laboratorios de universidades o ONGs para realizar el análisis de las muestras.")
-st.write("5. Esta iniciativa puede ser realizada por grupos de voluntarios locales o no, con interés en la conservación de las playas y la vida marina.")
