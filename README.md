@@ -35,8 +35,7 @@ El sitio web actual no tienen integrada la IA, solo muestra una ejemplo de cómo
 3. Naciones Unidas. (2018). Naciones Unidas (2018). La Agenda 2030 y los Objetivos de Desarrollo Sostenible: una oportunidad para América Latina y el Caribe (LC/G.2681-P/Rev.3), Santiago
 4. NESCO/COI. (2019). La ciencia que necesitamos para el océano que queremos: El Decenio de las Naciones Unidas de las Ciencias Oceánicas para el Desarrollo Sostenible (2021–2030). París. 24 pp. (Inglés) Folleto COI 2018-7
 5. https://www.conasi.eu/blog/consejos-de-salud/consejos-de-salud-consejos-de-salud/ftalatos-disruptores-hormonales/
-6. https://www.canada.ca/content/dam/hc-sc/documents/services/environmental-workplace-health/reports-publications/environmental
-7. contaminants/human-biomonitoring-resources/bisphenol-a-canadians/bpa-eng.pdf
+6. https://www.canada.ca/en/health-canada/services/food-nutrition/food-safety/chemical-contaminants/environmental-contaminants/polybrominated-diphenyl-ethers-pbdes/fact-sheet-polybrominated-diphenyl-ethers-pbdes-fish.html
 8. https://www.canada.ca/en/health-canada/services/environmental-workplace-health/reports-publications/environmental-contaminants/human-biomonitoring-resources/2-ethylhexyl-phthalate-canadians.html
 9. https://www.canada.ca/en/health-canada/services/chemicals-product-safety/phthalates.html
 10. https://www.canada.ca/en/health-canada/services/chemical-substances/fact-sheets/chemicals-glance/polybrominated-diphenyl-ethers-public-summary.html
