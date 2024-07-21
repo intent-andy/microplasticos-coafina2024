@@ -69,7 +69,15 @@ with col2:
         st.write("- El bisfenol A (BPA): es una sustancia química sintética que se utiliza como monómero para producir ciertos plásticos de policarbonato y resinas epoxi. \n Los plásticos de policarbonato y las resinas epoxi se utilizan ampliamente en productos de consumo. Algunos ejemplos son los envases de alimentos y bebidas, los equipos deportivos y de seguridad, la electrónica, las piezas de automóviles y los dispositivos médicos. El BPA también se utiliza en papel térmico recubrimientos para recibos, etiquetas de recetas y billetes de avión.\n El BPA se absorbe con facilidad y se metaboliza ampliamente en el organismo. Este compuesto y sus metabolitos se miden habitualmente en orina como BPA total. Estas mediciones reflejan la exposición reciente al compuesto.\n Los riesgos potenciales para la salud humana derivados de la exposición al BPA incluyen efectos sobre el hígado y los riñones. También incluyen efectos potenciales sobre la reproducción, el desarrollo, el neurodesarrollo y el comportamiento.")
         st.write("- Los ftalatos: También conocidos como ésteres de ácido ftálico, son un conjunto de más de 80 compuestos químicos sintéticos utilizados en numerosas industrias como plastificadores, y cuya función principal es la de dar mayor flexibilidad y elasticidad a los polímeros rígidos. \n Los estudios con animales han demostrado que la exposición al DEHP puede tener efectos sobre el desarrollo y la reproducción. También puede afectar al hígado y los riñones. El Centro Internacional de Investigaciones sobre el cáncer ha clasificado el DEHP como posiblemente cancerígeno para los seres humanos. ,\n Están presentes en productos de cuidado personal como cosméticos, también en productos de construcción y renovación como lubricantes y grasas, pinturas, revestimientos, adhesivos, selladores, textiles. Puede encontrarse en artículos eléctricos y electrónicos, también en juguetes y en algunos materiales de envasado de alimentos y plásticos de tipo PVC.")
         st.write("- Los éteres difenílicos polibromados (PBDE): son sustancias producidas comercialmente que se utilizan como retardantes de llama para frenar la ignición y propagación del fuego en una amplia variedad de productos de consumo como las bases de alfombras, espuma para muebles, electrodomésticos y los equipos eléctricos y electrónicos. Los PBDE pueden encontrarse en el medio ambiente en todo el mundo. Los efectos críticos o importantes considerados en la evaluación de la salud humana eran efectos sobre el desarrollo neurológico (como cambios en el movimiento y el comportamiento).")
-    
+        st.markdown("</div>", unsafe_allow_html=True)
+
+# Menú desplegable para "Relevancia del proyecto"
+with st.expander("Relevancia del proyecto"):
+    st.markdown(f"<div style='background-color:{color_page}; padding: 5px; border-radius: 5px;'>", unsafe_allow_html=True)
+    st.write("La contaminación por microplásticos es un problema ambiental global que afecta a los ecosistemas acuáticos y terrestres, así como a la salud humana. La identificación y cuantificación de los microplásticos presentes en el medio ambiente es un paso fundamental para abordar este problema. MonomerFinder es una herramienta que permite a los ciudadanos contribuir a la identificación de microplásticos en su entorno, facilitando la generación de datos sobre la presencia y distribución de estos contaminantes. Al involucrar a la comunidad en la detección de microplásticos, se promueve la conciencia ambiental y se fomenta la participación ciudadana en la protección de los ecosistemas y la salud humana.")
+    st.write("Este proyecto se enmarca en los Objetivos de Desarrollo Sostenible (ODS) de la Agenda 2030 de las Naciones Unidas, en particular en los ODS 6 (Agua limpia y saneamiento), 14 (Vida submarina) y 17 (Alianzas para lograr los objetivos) ya que contribuye al saneamiento de los ecosistemas acuáticos, la protección de la vida marina y la promoción de la colaboración entre diferentes actores para abordar los desafíos ambientales.")
+    st.write("Además, se alinea con los objetivos de la Década Oceánica, abarcando los desafíos 1 (Comprender y vencer la contaminación marina) y 9 (Habilidades, conocimientos y tecnologías para todos).")
+    st.markdown("</div>", unsafe_allow_html=True)
 
 # Software de MonomerFinder
 st.write("""
@@ -138,3 +146,16 @@ ubicacion_data = []
 entrada = solicitar_datos()
 if entrada:
     ubicacion_data.append(entrada)
+
+# Protocolo de estimación de microplásticos en la arena
+st.markdown("""
+    <style>
+    .center {
+        display: flex;
+        justify-content: center;
+    }
+    </style>
+    <div class="center">
+        <h2>Protocolo de estimación de microplásticos en la arena</h2>
+    </div>
+    """, unsafe_allow_html=True)
