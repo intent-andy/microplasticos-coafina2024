@@ -173,12 +173,38 @@ st.markdown("""
 st.map(pd.DataFrame({'lat': [latitud], 'lon': [longitud], 'zoom': [1]}))
 
 # Botón para analizar la imagen
-col1, col2, col3 = st.columns([1, 1, 1])
+if st.button("Analizar imagen"):
+    st.success("¡La imagen ha sido analizada con éxito!")
+    
+    # Mostrar los resultados del análisis
+    st.markdown("""
+        <style>
+        .center {
+            display: flex;
+            justify-content: center;
+        }
+        </style>
+        <div class="center">
+            <h2>Resultados del análisis</h2>
+        </div>
+        """, unsafe_allow_html=True)
+    st.write("Una vez procesada la imagen con el modelo de IA, se obtuvieron los siguientes resultados:")
+    df = pd.DataFrame({
+    'data_column': [1, 2],
+    'microplastic_type': ['Blanco', 'Rojo']
+    })
+    st.write(df)
 
-with col2:
-    if st.button("Analizar imagen"):
-        st.success("¡La imagen ha sido analizada con éxito!")
-        
+# Crear el histograma usando Matplotlib
+fig, ax = plt.subplots()
+ax.hist(df['data_column'], bins=10, color='skyblue', edgecolor='black')
+ax.set_title('Histograma de data_column')
+ax.set_xlabel('Valores')
+ax.set_ylabel('Frecuencia')
+
+# Mostrar el histograma en Streamlit
+st.pyplot(fig)
+
 
 
 # Protocolo de estimación de microplásticos en la arena
