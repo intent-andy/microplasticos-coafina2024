@@ -181,18 +181,19 @@ with col2:
             st.success("¡La imagen ha sido analizada con éxito!")
 
 # Resultados del análisis
-st.markdown("""
-    <style>
-    .center {
-        display: flex;
-        justify-content: center;
-    }
-    </style>
-    <div class="center">
-        <h2>Resultados del análisis</h2>
-    </div>
-    """, unsafe_allow_html=True)
-# Mostrar los resultados del análisis
+if uploaded_file is not None:    
+    st.markdown("""
+        <style>
+        .center {
+            display: flex;
+            justify-content: center;
+        }
+        </style>
+        <div class="center">
+            <h2>Resultados del análisis</h2>
+        </div>
+        """, unsafe_allow_html=True)
+    # Mostrar los resultados del análisis
 
 
 
