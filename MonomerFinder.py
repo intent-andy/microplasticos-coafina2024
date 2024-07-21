@@ -181,23 +181,6 @@ if st.button("Subir archivo"):
                 # Mostrar mensaje de éxito
                 st.success("¡La imagen ha sido analizada con éxito!")
 
-# Resultados del análisis
-if uploaded_file is not None:    
-    st.markdown("""
-        <style>
-        .center {
-            display: flex;
-            justify-content: center;
-        }
-        </style>
-        <div class="center">
-            <h2>Resultados del análisis</h2>
-        </div>
-        """, unsafe_allow_html=True)
-
-    # Mostrar los resultados
-    st.write("Cantidad de microplásticos encontrados: 5")
-
 
 # Protocolo de estimación de microplásticos en la arena
 
