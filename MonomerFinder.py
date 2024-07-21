@@ -162,24 +162,26 @@ st.markdown("""
 st.map(pd.DataFrame({'lat': [latitud], 'lon': [longitud], 'zoom': [1]}))
 
 # Botón para analizar la imagen
+col1, col2, col3 = st.columns([1, 1, 1])
 
-if st.button("Analizar imagen"):
-    if uploaded_file is not None:
-        # Crear el diccionario con los datos de la imagen
-        data_to_save = {
-            "latitud": latitud,
-            "longitud": longitud,
-            "imagen": uploaded_file.name,
-        }
-        # Guardar el diccionario en un archivo JSON
-        with open("data.json", "w") as json_file:
-            json.dump(data_to_save, json_file)
+with col2:
+    if st.button("Analizar imagen"):
+        if uploaded_file is not None:
+            # Crear el diccionario con los datos de la imagen
+            data_to_save = {
+                "latitud": latitud,
+                "longitud": longitud,
+                "imagen": uploaded_file.name,
+            }
+            # Guardar el diccionario en un archivo JSON
+            with open("data.json", "w") as json_file:
+                json.dump(data_to_save, json_file)
 
-        # Mostrar mensaje de éxito
-        st.success("¡La imagen ha sido analizada con éxito!")
+            # Mostrar mensaje de éxito
+            st.success("¡La imagen ha sido analizada con éxito!")
 
-        # Resultados del análisis
-        st.write("Resultados del análisis:")
+            # Resultados del análisis
+            st.write("Resultados del análisis:")
 
 # Protocolo de estimación de microplásticos en la arena
 
