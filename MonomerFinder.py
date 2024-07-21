@@ -188,8 +188,10 @@ if st.button("Analizar imagen"):
             <h2>Resultados del análisis</h2>
         </div>
         """, unsafe_allow_html=True)
-    st.write("Una vez procesada la imagen con el modelo de IA, se obtuvieron los siguientes resultados:")
-    
+
+    # Mostrar la imagen con las cajas del modelo de IA
+    st.write("La imagen ha sido procesada y se han identificado los microplásticos presentes en ella.")
+    st.image("Identificación.jpg", use_column_width=True)
     Resultados = {
     'Conteo': [1, 2],
     'Color': ['Blanco', 'Rojo']
@@ -207,6 +209,7 @@ if st.button("Analizar imagen"):
     # Mostrar los resultados en una tabla
     st.write("A continuación se presenta una tabla con los resultados obtenidos:")
     st.table(df)
+
 
 # Protocolo de estimación de microplásticos en la arena
 
