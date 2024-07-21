@@ -4,6 +4,7 @@ import csv
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
+import json
 
 # Cargar la imagen del banner
 banner_image = Image.open("Microplastics_in_the_natural_environment.jpg")
@@ -179,3 +180,16 @@ st.markdown("""
         <h2>Protocolo de estimación de microplásticos en la arena</h2>
     </div>
     """, unsafe_allow_html=True)
+
+# Recolectar datos del usuario
+user_location = "Ejemplo de ubicación"  # Este valor debería ser obtenido dinámicamente
+if uploaded_file is not None:
+    # Guardar la ubicación y el nombre del archivo en un diccionario
+    data_to_save = {
+        "location": user_location,
+        "filename": uploaded_file.name
+    }
+
+    # Guardar el diccionario en un archivo JSON
+    with open("data.json", "w") as json_file:
+        json.dump(data_to_save, json_file)
