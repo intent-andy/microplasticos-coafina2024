@@ -140,46 +140,46 @@ if st.button("Subir archivo"):
     st.success("¡La imagen ha sido cargada con éxito!")
 
 
-# Ubicación en el mapa
-st.markdown("""
-    <style>
-    .center {
-        display: flex;
-        justify-content: center;
-    }
-    </style>
-    <div class="center">
-        <h2>Ingresa tu ubicación</h2>
-    </div>
-    """, unsafe_allow_html=True)
-# Solicitar los datos de ubicación
-st.write("En este ejemplo se ha ingresado la ubicación de dicha imagen, pero se puede cambiar los valores de latitud y longitud para ver cómo se actualiza el mapa.")
-latitud = st.number_input('Latitud', value=-0.828698914155737, format="%.6f")
-longitud = st.number_input('Longitud', value=-90.82966201810576, format="%.6f")
-descripcion = st.text_input('Descripción de la ubicación (opcional)', value="Galápagos")
+    # Ubicación en el mapa
+    st.markdown("""
+        <style>
+        .center {
+            display: flex;
+            justify-content: center;
+        }
+        </style>
+        <div class="center">
+            <h2>Ingresa tu ubicación</h2>
+        </div>
+        """, unsafe_allow_html=True)
+    # Solicitar los datos de ubicación
+    st.write("En este ejemplo se ha ingresado la ubicación de dicha imagen, pero se puede cambiar los valores de latitud y longitud para ver cómo se actualiza el mapa.")
+    latitud = st.number_input('Latitud', value=-0.828698914155737, format="%.6f")
+    longitud = st.number_input('Longitud', value=-90.82966201810576, format="%.6f")
+    descripcion = st.text_input('Descripción de la ubicación (opcional)', value="Galápagos")
 
-# Ubicación en el mapa
-st.markdown("""
-    <style>
-    .center {
-        display: flex;
-        justify-content: center;
-    }
-    </style>
-    <div class="center">
-        <h2>Ubicación en el mapa</h2>
-    </div>
-    """, unsafe_allow_html=True)
-st.map(pd.DataFrame({'lat': [latitud], 'lon': [longitud], 'zoom': [1]}))
+    # Ubicación en el mapa
+    st.markdown("""
+        <style>
+        .center {
+            display: flex;
+            justify-content: center;
+        }
+        </style>
+        <div class="center">
+            <h2>Ubicación en el mapa</h2>
+        </div>
+        """, unsafe_allow_html=True)
+    st.map(pd.DataFrame({'lat': [latitud], 'lon': [longitud], 'zoom': [1]}))
 
-# Botón para analizar la imagen
-col1, col2, col3 = st.columns([1, 1, 1])
+    # Botón para analizar la imagen
+    col1, col2, col3 = st.columns([1, 1, 1])
 
-with col2:
-    if st.button("Analizar imagen"):
-        if uploaded_file is not None:
-            # Mostrar mensaje de éxito
-            st.success("¡La imagen ha sido analizada con éxito!")
+    with col2:
+        if st.button("Analizar imagen"):
+            if uploaded_file is not None:
+                # Mostrar mensaje de éxito
+                st.success("¡La imagen ha sido analizada con éxito!")
 
 # Resultados del análisis
 if uploaded_file is not None:    
