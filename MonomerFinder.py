@@ -11,19 +11,9 @@ banner_image = Image.open("Microplastics_in_the_natural_environment.jpg")
 # Rotar la imagen 90 grados
 banner_image_rotated = banner_image.rotate(90, expand=True)
 
-# Obtener las dimensiones originales de la imagen
-original_width, original_height = banner_image_rotated.size
+# Mostrar la imagen del banner
+st.image(banner_image_rotated, use_column_width=True, height=200)
 
-# Calcular el nuevo ancho para mantener la proporción
-new_height = 250
-aspect_ratio = original_width / original_height
-new_width = int(new_height * aspect_ratio)
-
-# Redimensionar la imagen para cambiar su altura manteniendo la proporción
-banner_image_resized = banner_image_rotated.resize((new_width, new_height))
-
-# Mostrar la imagen redimensionada
-st.image(banner_image_resized, use_column_width=True)
 
 # Definir el estilo CSS para el color de fondo
 color_reto = "#FFD700"  # Amarillo
