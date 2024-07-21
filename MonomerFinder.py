@@ -221,7 +221,6 @@ st.write("Haz clic en el botón para descargar los resultados del análisis en u
 if st.button("Descargar resultados"):
     df.to_csv("resultados.csv", index=False)
     st.success("¡Los resultados han sido descargados con éxito!")
-    
 
 # Protocolo de estimación de microplásticos en la arena
 
