@@ -59,6 +59,10 @@ with col1:
         st.write("- Turismo: La eliminación inadecuada de los residuos de los turistas, los sistemas locales de gestión de residuos deficientes o inexistentes, la descarga incontrolada de aguas residuales de los cruceros y el consumo masivo de productos y envases de plástico de un solo uso en los países impulsados por el turismo, aumentan los aportes de microplásticos.")
         st.markdown("</div>", unsafe_allow_html=True)
 
+with col2:
+    # Imagen 1
+    st.image("RaceforWater_PeterCharaf_MicroplasticsAzores_(2).jpg", use_column_width=True)
+
 # Software de MonomerFinder
 st.write("""
 <style>
