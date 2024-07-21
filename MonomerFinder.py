@@ -94,3 +94,16 @@ longitud = st.number_input('Longitud', value=0.0, format="%.6f")
 descripcion = st.text_input('Descripción de la ubicación (opcional)')
 pais = st.text_input('País')
 
+# Ubicación en el mapa
+st.markdown("""
+    <style>
+    .center {
+        display: flex;
+        justify-content: center;
+    }
+    </style>
+    <div class="center">
+        <h2>Ubicación en el mapa</h2>
+    </div>
+    """, unsafe_allow_html=True)
+st.map(pd.DataFrame({'lat': [latitud], 'lon': [longitud]}))
