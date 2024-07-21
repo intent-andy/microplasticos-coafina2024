@@ -137,56 +137,39 @@ if st.button("Comenzar"):
     st.write("En este caso se ha subido una imagen de ejemplo, haz clic en el botón 'Seleccionar archivo' para continuar.")
     
     # Seleccionar una imagen
-    st.image("P061337-98078.jpg, use_column_width=True")
-    if st.button("Seleccionar archivo"):
-        st.write("¡Imagen seleccionada!")
-        # Mostrar los resultados
-        st.markdown("""
-            <style>
-            .center {
-                display: flex;
-                justify-content: center;
-            }
-            </style>
-            <div class="center">
-                <h2>Resultados</h2>
-            </div>
-            """, unsafe_allow_html=True)
-        st.write("Número de microplásticos encontrados: 5")
-        st.write("Tipo de microplásticos encontrados: Polibutileno tereftalato (PBT)")
-        st.write("Ubicación: 19.4326° N, 99.1332° W")
-        st.write("Descripción de la ubicación: Ciudad de México")
-    
+    st.image("P061337-98078.jpg", use_column_width=True)
+    st.button("Seleccionar archivo")
 
-st.markdown("""
-    <style>
-    .center {
-        display: flex;
-        justify-content: center;
-    }
-    </style>
-    <div class="center">
-        <h2>Ingresa tu ubicación</h2>
-    </div>
-    """, unsafe_allow_html=True)
-# Solicitar los datos de ubicación
-latitud = st.number_input('Latitud', value=0.0, format="%.6f")
-longitud = st.number_input('Longitud', value=0.0, format="%.6f")
-descripcion = st.text_input('Descripción de la ubicación (opcional)')
+if st.button("Seleccionar archivo"):
+    st.markdown("""
+        <style>
+        .center {
+            display: flex;
+            justify-content: center;
+        }
+        </style>
+        <div class="center">
+            <h2>Ingresa tu ubicación</h2>
+        </div>
+        """, unsafe_allow_html=True)
+    # Solicitar los datos de ubicación
+    latitud = st.number_input('Latitud', value=0.0, format="%.6f")
+    longitud = st.number_input('Longitud', value=0.0, format="%.6f")
+    descripcion = st.text_input('Descripción de la ubicación (opcional)')
 
-# Ubicación en el mapa
-st.markdown("""
-    <style>
-    .center {
-        display: flex;
-        justify-content: center;
-    }
-    </style>
-    <div class="center">
-        <h2>Ubicación en el mapa</h2>
-    </div>
-    """, unsafe_allow_html=True)
-st.map(pd.DataFrame({'lat': [latitud], 'lon': [longitud], 'zoom': [1]}))
+    # Ubicación en el mapa
+    st.markdown("""
+        <style>
+        .center {
+            display: flex;
+            justify-content: center;
+        }
+        </style>
+        <div class="center">
+            <h2>Ubicación en el mapa</h2>
+        </div>
+        """, unsafe_allow_html=True)
+    st.map(pd.DataFrame({'lat': [latitud], 'lon': [longitud], 'zoom': [1]}))
 
 
 
