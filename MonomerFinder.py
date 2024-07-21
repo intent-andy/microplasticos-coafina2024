@@ -153,9 +153,10 @@ st.markdown("""
     </div>
     """, unsafe_allow_html=True)
 # Solicitar los datos de ubicación
-latitud = st.number_input('Latitud', value=0.0, format="%.6f")
-longitud = st.number_input('Longitud', value=0.0, format="%.6f")
-descripcion = st.text_input('Descripción de la ubicación (opcional)')
+st.write("En este ejemplo se ha ingresado la ubicación de dicha imagen, pero se puede cambiar los valores de latitud y longitud para ver cómo se actualiza el mapa.")
+latitud = st.number_input('Latitud', value=-0.828698914155737, format="%.6f")
+longitud = st.number_input('Longitud', value=-90.82966201810576, format="%.6f")
+descripcion = st.text_input('Descripción de la ubicación (opcional)', value="Galápagos")
 
 # Ubicación en el mapa
 st.markdown("""
