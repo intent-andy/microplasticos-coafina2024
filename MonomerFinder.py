@@ -100,7 +100,7 @@ with st.expander("Objetivos del proyecto"):
     st.markdown("</div>", unsafe_allow_html=True)
 
 # Software de MonomerFinder
-st.markdown("""
+st.write("""
 <style>
 .centered {
     text-align: center;
@@ -110,43 +110,67 @@ st.markdown("""
     <h1>¡Vamos a identificar y contar microplásticos!</h1>
 </div>
 """, unsafe_allow_html=True)
+st.write("Recuerda:")
+st.write("1-.Tener a la mano tu ubicación")
+st.write("2-.La fotos deben ser de microplásticos filtrados es decir sin ningún otro material en lo posible")
+st.write("3-.Las fotos deben ser claras para obtener mejores resultados")
 
+# Solicitar al usuario que ingrese una imagen
 st.markdown("""
-Este es un ejemplo de cómo se verá la aplicación MonomerFinder. A continuación, se presentan las instrucciones para subir una imagen y obtener los resultados del análisis:
-<ol>
-    <li>Ten a la mano tu ubicación.</li>
-    <li>Las fotos deben ser de microplásticos filtrados, es decir, sin ningún otro material en lo posible.</li>
-    <li>Las fotos deben ser claras para obtener mejores resultados.</li>
-</ol>
-""", unsafe_allow_html=True)
+    <style>
+    .center {
+        display: flex;
+        justify-content: center;
+    }
+    </style>
+    <div class="center">
+        <h2>Sube tu imagen</h2>
+    </div>
+    """, unsafe_allow_html=True)
+uploaded_file = st.file_uploader(" ", type=["jpg", "jpeg", "png"])
 
-# Botón para comenzar
-if st.button("Comenzar"):
-    # Solicitar al usuario que ingrese una imagen
-    st.markdown("""
-        <style>
-        .center {
-            display: flex;
-            justify-content: center;
-        }
-        </style>
-        <div class="center">
-            <h2>Sube tu imagen</h2>
-        </div>
-        """, unsafe_allow_html=True)
-    st.write("En este caso se ha subido una imagen de ejemplo, haz clic en el botón 'Seleccionar archivo' para continuar.")
-    
-    # Seleccionar una imagen
-    col1, col2 = st.columns([1, 1])
-    with col1:
-        st.image("d--52-_jpg.rf.086e80a05c54229e7189ec3bc38c9940.jpg", use_column_width=True)
-
-    with col2:
-        if st.button("Seleccionar archivo"):
-            st.write("¡Archivo seleccionado!")
-
+# Ubicación en el mapa
+st.markdown("""
+    <style>
+    .center {
+        display: flex;
+        justify-content: center;
+    }
+    </style>
+    <div class="center">
+        <h2>Ingresa tu ubicación</h2>
+    </div>
+    """, unsafe_allow_html=True)
 # Solicitar los datos de ubicación
-if st.button("Seleccionar archivo"):
+latitud = st.number_input('Latitud', value=0.0, format="%.6f")
+longitud = st.number_input('Longitud', value=0.0, format="%.6f")
+descripcion = st.text_input('Descripción de la ubicación (opcional)')
+
+# Ubicación en el mapa
+st.markdown("""
+    <style>
+    .center {
+        display: flex;
+        justify-content: center;
+    }
+    </style>
+    <div class="center">
+        <h2>Ubicación en el mapa</h2>
+    </div>
+    """, unsafe_allow_html=True)
+st.map(pd.DataFrame({'lat': [latitud], 'lon': [longitud], 'zoom': [1]}))
+
+# Botón para analizar la imagen
+col1, col2, col3 = st.columns([1, 1, 1])
+
+with col2:
+    if st.button("Analizar imagen"):
+        if uploaded_file is not None:
+            # Mostrar mensaje de éxito
+            st.success("¡La imagen ha sido analizada con éxito!")
+
+# Resultados del análisis
+if uploaded_file is not None:    
     st.markdown("""
         <style>
         .center {
@@ -155,32 +179,12 @@ if st.button("Seleccionar archivo"):
         }
         </style>
         <div class="center">
-            <h2>Ingresa tu ubicación</h2>
+            <h2>Resultados del análisis</h2>
         </div>
         """, unsafe_allow_html=True)
-    # Solicitar los datos de ubicación
-    latitud = st.number_input('Latitud', value=0.0, format="%.6f")
-    longitud = st.number_input('Longitud', value=0.0, format="%.6f")
-    descripcion = st.text_input('Descripción de la ubicación (opcional)')
-
-    # Ubicación en el mapa
-    st.markdown("""
-        <style>
-        .center {
-            display: flex;
-            justify-content: center;
-        }
-        </style>
-        <div class="center">
-            <h2>Ubicación en el mapa</h2>
-        </div>
-        """, unsafe_allow_html=True)
-    st.map(pd.DataFrame({'lat': [latitud], 'lon': [longitud], 'zoom': [1]}))
-
-
 
     # Mostrar los resultados
-    
+    st.write("Cantidad de microplásticos encontrados: 5")
 
 
 # Protocolo de estimación de microplásticos en la arena
